@@ -1,0 +1,82 @@
+@media only screen and  (max-width:1199px){
+    span.user-name, .sign-btn {       
+        padding: 0px 5px;     
+    }
+}
+
+@media only screen and  (max-width:991px){
+    .mobile-user, .sign-btn span {
+        display: block;
+        font-size: 16px;
+        color:#fff;
+    }
+.dropdown.user.user-menu label {  
+    display: none;
+}
+span.user-name, .sign-btn{
+    font-size: 0;
+}
+.sign-btn {
+    padding: 0px 15px; 
+    height: auto;
+    line-height: 100%;
+    margin-right: 0;
+}
+span.mobile-user {
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #3c8dbc;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 600;
+    margin-top: -5px;
+}
+
+}
+
+@media only screen and  (max-width:767px){
+
+.nav-top-custom {
+    position: relative;
+    padding-left: 0;
+}
+.skin-blue .main-header .navbar .sidebar-toggle {   
+    position: relative;
+    z-index: 9999;
+}
+span.user-name, .sign-btn {  
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.nav-top-custom  .col-sm-4.text-right {
+    position: static;
+}
+
+span.user-name {
+    right: 40px;
+    font-size: 14px;
+}
+.dropdown.user.user-menu select.form-control {   
+    margin-bottom: 5px;
+}
+span.mobile-user{
+    display:none;
+}
+.main-header .navbar-custom-menu {   
+    margin-top: 0;
+}
+.main-header .sidebar-toggle {   
+    padding: 9px 15px;
+}
+span.user-name, .sign-btn{
+    margin-top:0;
+}
+.content-wrapper {
+    position: relative;
+    top: 68px;
+}
+
+}
