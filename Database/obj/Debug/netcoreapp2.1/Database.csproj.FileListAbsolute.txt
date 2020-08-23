@@ -1,0 +1,12 @@
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\bin\Debug\netcoreapp2.1\Database.deps.json
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\bin\Debug\netcoreapp2.1\Database.dll
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\bin\Debug\netcoreapp2.1\Database.pdb
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\bin\Debug\netcoreapp2.1\EntityFramework.dll
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\bin\Debug\netcoreapp2.1\EntityFramework.xml
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.csproj.CoreCompileInputs.cache
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.AssemblyInfoInputs.cache
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.AssemblyInfo.cs
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.csproj.CopyComplete
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.dll
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.pdb
+C:\Users\nikhi\source\repos\BlinkAndBuys\Database\obj\Debug\netcoreapp2.1\Database.csprojAssemblyReference.cache
