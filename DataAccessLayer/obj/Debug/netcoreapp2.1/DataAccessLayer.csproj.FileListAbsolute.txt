@@ -10,3 +10,15 @@ C:\Users\nikhi\source\repos\BlinkAndBuys\DataAccessLayer\obj\Debug\netcoreapp2.1
 C:\Users\nikhi\source\repos\BlinkAndBuys\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csproj.CopyComplete
 C:\Users\nikhi\source\repos\BlinkAndBuys\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.dll
 C:\Users\nikhi\source\repos\BlinkAndBuys\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.pdb
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.deps.json
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.dll
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\DataAccessLayer.pdb
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\Database.dll
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\Database.pdb
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csprojAssemblyReference.cache
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.AssemblyInfoInputs.cache
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.AssemblyInfo.cs
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csproj.CopyComplete
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.dll
+D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.pdb

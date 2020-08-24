@@ -11921,11 +11921,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\BlinkAndBuys\\BlinkAndBuys.csproj",
+      "projectUniqueName": "D:\\blink_and_buys_Api\\BlinkAndBuys\\BlinkAndBuys.csproj",
       "projectName": "BlinkAndBuys",
-      "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\BlinkAndBuys\\BlinkAndBuys.csproj",
+      "projectPath": "D:\\blink_and_buys_Api\\BlinkAndBuys\\BlinkAndBuys.csproj",
       "packagesPath": "C:\\Users\\nikhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\BlinkAndBuys\\obj\\",
+      "outputPath": "D:\\blink_and_buys_Api\\BlinkAndBuys\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11944,14 +11944,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Core\\Core.csproj"
+            "D:\\blink_and_buys_Api\\Core\\Core.csproj": {
+              "projectPath": "D:\\blink_and_buys_Api\\Core\\Core.csproj"
             },
-            "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\DataAccessLayer\\DataAccessLayer.csproj"
+            "D:\\blink_and_buys_Api\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "D:\\blink_and_buys_Api\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj": {
-              "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj"
+            "D:\\blink_and_buys_Api\\Database\\Database.csproj": {
+              "projectPath": "D:\\blink_and_buys_Api\\Database\\Database.csproj"
             }
           }
         }

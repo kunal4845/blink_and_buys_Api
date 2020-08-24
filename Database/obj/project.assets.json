@@ -3124,11 +3124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj",
+      "projectUniqueName": "D:\\blink_and_buys_Api\\Database\\Database.csproj",
       "projectName": "Database",
-      "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj",
+      "projectPath": "D:\\blink_and_buys_Api\\Database\\Database.csproj",
       "packagesPath": "C:\\Users\\nikhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\obj\\",
+      "outputPath": "D:\\blink_and_buys_Api\\Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

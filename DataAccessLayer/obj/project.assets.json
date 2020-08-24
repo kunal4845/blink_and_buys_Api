@@ -3143,11 +3143,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "D:\\blink_and_buys_Api\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "D:\\blink_and_buys_Api\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\nikhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\DataAccessLayer\\obj\\",
+      "outputPath": "D:\\blink_and_buys_Api\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3166,8 +3166,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj": {
-              "projectPath": "C:\\Users\\nikhi\\source\\repos\\BlinkAndBuys\\Database\\Database.csproj"
+            "D:\\blink_and_buys_Api\\Database\\Database.csproj": {
+              "projectPath": "D:\\blink_and_buys_Api\\Database\\Database.csproj"
             }
           }
         }
