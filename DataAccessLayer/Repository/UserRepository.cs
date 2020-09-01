@@ -96,6 +96,5 @@ namespace DataAccessLayer.Repository {
                 throw ex;
             }
         }
-
     }
 }

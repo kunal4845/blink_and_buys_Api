@@ -18,3 +18,9 @@ D:\blink_and_buys_Api\Core\obj\Debug\netcoreapp2.1\Core.AssemblyInfoInputs.cache
 D:\blink_and_buys_Api\Core\obj\Debug\netcoreapp2.1\Core.AssemblyInfo.cs
 D:\blink_and_buys_Api\Core\obj\Debug\netcoreapp2.1\Core.dll
 D:\blink_and_buys_Api\Core\obj\Debug\netcoreapp2.1\Core.pdb
+D:\blink_and_buys_Api\Core\bin\Debug\netcoreapp2.1\Core.deps.json
+D:\blink_and_buys_Api\Core\bin\Debug\netcoreapp2.1\Core.dll
+D:\blink_and_buys_Api\Core\bin\Debug\netcoreapp2.1\Core.pdb
+D:\blink_and_buys_Api\Core\bin\Debug\netcoreapp2.1\Database.dll
+D:\blink_and_buys_Api\Core\bin\Debug\netcoreapp2.1\Database.pdb
+D:\blink_and_buys_Api\Core\obj\Debug\netcoreapp2.1\Core.csproj.CopyComplete

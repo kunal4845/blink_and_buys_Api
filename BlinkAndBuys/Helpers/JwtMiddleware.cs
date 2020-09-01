@@ -44,7 +44,8 @@ namespace BlinkAndBuys.Helpers {
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 // attach user to context on successful jwt validation
-                context.Items["Account"] = await userService.GetUserById(userId);
+                context.Items["userId"] = userId;
+                    //await userService.GetUserById(userId);
             }
             catch {
                 throw;
