@@ -69,6 +69,7 @@ namespace BlinkAndBuys {
             // Repositories and services injection
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ILocationRepository, LocationRepository>();
 
             services.AddMvc();
         }
