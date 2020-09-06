@@ -40,3 +40,7 @@ D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorTar
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.csproj.CopyComplete
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.dll
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.pdb
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\appsettings.json
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.genruntimeconfig.cache
