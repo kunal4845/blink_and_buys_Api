@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using Grocery.Data;
 using Database.Models;
+using System.Collections.Generic;
 
 namespace DataAccessLayer.Repository {
     public class UserRepository : IUserRepository {
@@ -39,10 +40,10 @@ namespace DataAccessLayer.Repository {
                 user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower());
 
                 if (user != null) {
-                 
-                        user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
-                                            && x.Password == account.Password);
-                    
+
+                    user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
+                                        && x.Password == account.Password);
+
                     return user;
                 }
                 return user;
@@ -91,6 +92,16 @@ namespace DataAccessLayer.Repository {
                 Account user = null;
                 user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == id);
                 return user;
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Account>> GetUsers() {
+            try {
+                var users = await _dbContext.Account.ToListAsync();
+                return users;
             }
             catch (Exception ex) {
                 throw ex;

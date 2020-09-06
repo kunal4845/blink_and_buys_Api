@@ -1,4 +1,5 @@
 ﻿using Database.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.IRepository {
@@ -9,5 +10,6 @@ namespace DataAccessLayer.IRepository {
         Task<Account> CheckEmailExists(string email);
         Task<Account> ResetPassword(Account account);
         Task<Account> GetUserById(int id);
+        Task<List<Account>> GetUsers();
     }
 }

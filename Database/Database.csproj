@@ -19,4 +19,9 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Db\Tables\" />
+    <Folder Include="Db\Scripts\" />
+  </ItemGroup>
+
 </Project>
