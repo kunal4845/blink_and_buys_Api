@@ -1,0 +1,139 @@
+﻿@page
+@model BlinkAndBuys.Templates.VerifiedTemplateModel
+@{
+
+    <!DOCTYPE html PUBLIC - //W3C//DTD XHTML 1.0 Transitional //EN http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title></title>
+
+        <style type="text/css">
+            body {
+                font-family: Arial, Helvetica;
+            }
+
+            .layout-wrapper {
+                width: 600px;
+            }
+
+            .header {
+                background-color: #242225;
+            }
+
+                .header img {
+                    display: block;
+                }
+
+            .content {
+                background-color: #ffffff;
+                padding: 10px 20px;
+                border: 10px solid #eaeaea;
+                border-top: none;
+            }
+
+            .footer {
+                padding: 20px;
+                padding-top: 5px;
+                font-size: 10px;
+                color: #cccccc;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+                p.company-details {
+                    font-size: 12px;
+                }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        </style>
+        <style type="text/css" id="mobile">
+            @@media only screen and (max-device-width: 480px) {
+                body {
+                }
+
+                .layout-wrapper {
+                    width: 480px !important;
+                }
+
+                .header {
+                    background-color: transparent !important;
+                }
+
+                    .header img {
+                        width: 480px !important;
+                    }
+
+                .content {
+                    border: none !important;
+                }
+
+                .footer {
+                    padding-top: 15px !important;
+                }
+
+                p {
+                    font-size: 22px !important;
+                }
+
+                h1 {
+                    font-size: 28px !important;
+                }
+
+                h2 {
+                    font-size: 24px !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor="#f1f1f1">
+
+        <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1">
+            <tr>
+                <td valign="top" align="center">
+
+                    <table cellpadding="0" cellspacing="0" width="100%" height="80">
+                        <tr>
+                            <td class="header" align="center">
+                                <table cellpadding="0" cellspacing="0" width="600" height="80" class="layout-wrapper" style="width: 600px;">
+                                    <tr>
+                                        <td>
+                                            <img src="http://example.com/email-header.png" alt="Milkshake Commerce" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" width="600" class="layout-wrapper">
+                        <tr>
+                            <td class="content" align="left">
+                                #¤#¤CONTENTSECTION#¤#¤
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="footer" align="left">
+                                <p>Nikhil</p>
+                                <p>Dwivedi</p>
+                                <p class="company-details"><i>Company name etc.</i></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+}

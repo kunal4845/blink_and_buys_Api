@@ -31,7 +31,6 @@ D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Core.pdb
 D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\DataAccessLayer.pdb
 D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Database.pdb
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.csprojAssemblyReference.cache
-D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.csproj.CoreCompileInputs.cache
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorAssemblyInfo.cache
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorAssemblyInfo.cs
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.AssemblyInfoInputs.cache
@@ -44,3 +43,11 @@ D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\appsettings.Developme
 D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\appsettings.json
 D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.genruntimeconfig.cache
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\BlinkAndBuys.Views.dll
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\BlinkAndBuys.Views.pdb
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.TagHelpers.input.cache
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.TagHelpers.output.cache
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorCoreGenerate.cache
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\Razor\Templates\VerifiedTemplate.cshtml.g.cs
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorTargetAssemblyInfo.cs
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.Views.pdb

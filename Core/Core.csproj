@@ -8,6 +8,8 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="MimeKit" Version="2.9.1" />
+    <PackageReference Include="RazorEngine" Version="3.10.0" />
   </ItemGroup>
 
   <ItemGroup>

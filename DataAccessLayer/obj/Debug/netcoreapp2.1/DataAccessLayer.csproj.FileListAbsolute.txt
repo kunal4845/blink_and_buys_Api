@@ -22,3 +22,5 @@ D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.As
 D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.csproj.CopyComplete
 D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.dll
 D:\blink_and_buys_Api\DataAccessLayer\obj\Debug\netcoreapp2.1\DataAccessLayer.pdb
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\Core.dll
+D:\blink_and_buys_Api\DataAccessLayer\bin\Debug\netcoreapp2.1\Core.pdb

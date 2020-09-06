@@ -16,22 +16,29 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 
-namespace BlinkAndBuys {
-    public class Startup {
-        public Startup(IConfiguration configuration) {
+namespace BlinkAndBuys
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services) {
+        public void ConfigureServices(IServiceCollection services)
+        {
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.Configure<SmtpCredentials>(Configuration.GetSection("SmtpCredentials"));
-            services.AddTransient<EmailHelper>();
+
+         
+
 
             // Auto Mapper Configurations
-            var mappingConfig = new MapperConfiguration(mc => {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
                 mc.AddProfile(new MappingProfile());
             });
 
@@ -45,7 +52,8 @@ namespace BlinkAndBuys {
             services.AddDbContext<BlinkandBuysContext>(options => options.UseSqlServer(ConnectionString));
 
             // CORS  
-            services.AddCors(options => {
+            services.AddCors(options =>
+            {
                 options.AddPolicy("CORS", corsPolicyBuilder => corsPolicyBuilder.WithOrigins("http://localhost:4200")
                     // Apply CORS policy for any type of origin  
                     .AllowAnyMethod()
@@ -57,7 +65,8 @@ namespace BlinkAndBuys {
             });
 
             //files
-            services.Configure<FormOptions>(o => {
+            services.Configure<FormOptions>(o =>
+            {
                 o.ValueLengthLimit = int.MaxValue;
                 o.MultipartBodyLengthLimit = int.MaxValue;
                 o.MemoryBufferThreshold = int.MaxValue;
@@ -70,23 +79,28 @@ namespace BlinkAndBuys {
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILocationRepository, LocationRepository>();
+            services.AddScoped<IDealerRepository, DealerRepository>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
-            if (env.IsDevelopment()) {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
                 app.UseDeveloperExceptionPage();
             }
-            else {
+            else
+            {
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseCors("CORS");
             app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions() {
+            app.UseStaticFiles(new StaticFileOptions()
+            {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),
                 @"Resources")),
                 RequestPath = new PathString("/Resources")
