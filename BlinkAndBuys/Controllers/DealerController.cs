@@ -36,16 +36,7 @@ namespace BlinkAndBuys.Controllers
         {
             var loggedInUser = Request.HttpContext.Items["userId"];
             var res = await _dealerRepository.VerifyDealer(userId, Convert.ToInt32(loggedInUser));
-            if (res)
-            {
-                EmailModel email = new EmailModel("", "", "", true);
-                var sendEmail = await EmailHelper.SendEmail(email, "VerifiedTemplate", _smtpCredentials);
-                if (sendEmail)
-                {
-                    return Ok(sendEmail);
-                }
-            }
-            return BadRequest(false);
+            return BadRequest(res);
         }
 
         [HttpDelete]

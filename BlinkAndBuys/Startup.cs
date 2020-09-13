@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using Serilog;
+using Microsoft.Extensions.Logging;
 
 namespace BlinkAndBuys
 {
@@ -32,9 +34,6 @@ namespace BlinkAndBuys
         {
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.Configure<SmtpCredentials>(Configuration.GetSection("SmtpCredentials"));
-
-         
-
 
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
@@ -80,12 +79,13 @@ namespace BlinkAndBuys
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IDealerRepository, DealerRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -95,6 +95,8 @@ namespace BlinkAndBuys
             {
                 app.UseHsts();
             }
+
+            loggerFactory.AddFile("Logs/myapp-{Date}.txt");
 
             app.UseHttpsRedirection();
             app.UseCors("CORS");

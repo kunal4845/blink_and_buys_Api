@@ -1,5 +1,4 @@
 ﻿using DataAccessLayer.IRepository;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
@@ -7,6 +6,7 @@ using Grocery.Data;
 using Database.Models;
 using System.Collections.Generic;
 using Core.Common;
+using Microsoft.Extensions.Logging;
 
 namespace DataAccessLayer.Repository
 {
@@ -14,11 +14,12 @@ namespace DataAccessLayer.Repository
     {
         #region"CONTEXT"
         private readonly BlinkandBuysContext _dbContext;
-        private readonly IMapper _mapper;
-        public UserRepository(BlinkandBuysContext dbContext, IMapper mapper)
+        private readonly ILogger<UserRepository> _logger;
+
+        public UserRepository(BlinkandBuysContext dbContext, ILogger<UserRepository> logger)
         {
             _dbContext = dbContext;
-            _mapper = mapper;
+            _logger = logger;
         }
         #endregion
 
@@ -28,7 +29,7 @@ namespace DataAccessLayer.Repository
             {
                 account.IsActive = true;
                 account.IsDeleted = false;
-                account.IsVerified = false;
+                account.IsAccountVerified = false;
                 account.CreatedDt = DateTime.Now;
                 account.ModifiedDt = DateTime.Now;
                 account.RoleId = (int)ERole.Dealer;
@@ -39,6 +40,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -49,19 +51,17 @@ namespace DataAccessLayer.Repository
             {
                 Account user = null;
                 user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower());
-
                 if (user != null)
                 {
-
                     user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
                                         && x.Password == account.Password);
-
                     return user;
                 }
                 return user;
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -76,6 +76,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -90,6 +91,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -105,6 +107,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -119,6 +122,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -131,7 +135,7 @@ namespace DataAccessLayer.Repository
                 return users;
             }
             catch (Exception ex)
-            {
+            {_logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }

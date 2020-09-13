@@ -48,6 +48,7 @@ D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\BlinkAndBuys.Views.pd
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.TagHelpers.input.cache
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.TagHelpers.output.cache
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorCoreGenerate.cache
-D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\Razor\Templates\VerifiedTemplate.cshtml.g.cs
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.RazorTargetAssemblyInfo.cs
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.Views.pdb
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\Razor\Templates\ResetPassword.cshtml.g.cs
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.csproj.CoreCompileInputs.cache

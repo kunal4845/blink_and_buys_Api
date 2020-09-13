@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BlinkAndBuys.Templates
 {
-    public class VerifiedTemplateModel : PageModel
+    public class ResetPasswordModel : PageModel
     {
         public void OnGet()
         {

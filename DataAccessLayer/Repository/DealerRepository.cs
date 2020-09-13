@@ -24,7 +24,7 @@ namespace DataAccessLayer.Repository
                 var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
                 if (user != null)
                 {
-                    user.IsVerified = true;
+                    user.IsAccountVerified = true;
                     user.ModifiedDt = DateTime.Now;
                     user.ModifiedBy = loggedInUser;
 
