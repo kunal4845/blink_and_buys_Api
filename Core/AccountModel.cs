@@ -6,7 +6,7 @@ namespace Core
     public class AccountModel
     {
         public int Id { get; set; }
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -25,7 +25,9 @@ namespace Core
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }
         public bool IsAccountVerified { get; set; }
-        public DateTime CreatedDt { get; set; }
+        public string IdProofPath { get; set; }
+        public string CancelledChequePath { get; set; }
+        public DateTime? CreatedDt { get; set; }
         public string Token { get; set; }
         public Microsoft.AspNetCore.Http.IFormFile IdProof { get; set; }
         public Microsoft.AspNetCore.Http.IFormFile CancelledCheque { get; set; }
