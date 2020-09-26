@@ -82,11 +82,11 @@ namespace GroceryStore.Controllers
                 try
                 {
                     var account = _mapper.Map<AccountModel, Account>(accountModel);
-                    _logger.LogError("Authenticating user in database.");
+                    _logger.LogInformation("Authenticating user in database.");
                     Account user = await AuthenticateUser(account);
                     if (user == null)
                     {
-                        _logger.LogError("check for the id proof and cancelled cheque files.");
+                        _logger.LogInformation("check for the id proof and cancelled cheque files.");
 
                         var files = Request.Form.Files;
                         var folderName = Path.Combine("Resources", "Images");
@@ -97,6 +97,8 @@ namespace GroceryStore.Controllers
                             _logger.LogError("no files found, exception returns.");
                             return BadRequest();
                         }
+
+
 
                         foreach (var file in files)
                         {
@@ -109,16 +111,21 @@ namespace GroceryStore.Controllers
                                 file.CopyTo(stream);
                             }
                         }
-                        account.IdProofPath = pathToSave + "\\" + accountModel.IdProof.FileName;
-                        account.CancelledChequePath = pathToSave + "\\" + accountModel.CancelledCheque.FileName;
+                        _logger.LogInformation("Convert images to base64.");
+                        byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.IdProof.FileName);
+                        account.IdProofPath = Convert.ToBase64String(idProofImageArray);
+
+                        byte[] chequeImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.CancelledCheque.FileName);
+                        account.CancelledChequePath = Convert.ToBase64String(chequeImageArray);
+
                         account.Password = Core.Helper.Helpers.EncodePasswordMd5(accountModel.Password);
-                        _logger.LogError("Inserting record to database.");
+                        _logger.LogInformation("Inserting record to database.");
                         user = await _userService.SignUp(account);
                     }
 
                     if (user.Id > 0)
                     {
-                        _logger.LogError("Generating token.");
+                        _logger.LogInformation("Generating token.");
                         var genToken = GenerateJwtToken(user);
                         LoginToken loginToken = new LoginToken
                         {
@@ -128,7 +135,7 @@ namespace GroceryStore.Controllers
                             CreatedDt = DateTime.Now
                         };
 
-                        _logger.LogError("Inserting toke to db.");
+                        _logger.LogInformation("Inserting toke to db.");
                         var token = await _userService.LoginToken(loginToken);
                         var response = _mapper.Map<Account, AccountModel>(user);
                         response.Token = genToken;

@@ -12,6 +12,8 @@ namespace Core.Common
             CreateMap<City, CityModel>().ReverseMap();
             CreateMap<State, StateModel>().ReverseMap();
             CreateMap<ProductCategory, ProductCategoryModel>().ReverseMap();
+            CreateMap<Product, ProductModel>().ReverseMap();
+            CreateMap<ProductImage, ProductImageModel>().ReverseMap();
         }
     }
 }

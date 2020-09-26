@@ -46,6 +46,36 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+        public async Task<int> Upsert(Product product)
+        {
+            try
+            {
+                _logger.LogInformation("inserting product record to database.");
+                await _dbContext.Product.AddAsync(product);
+                await _dbContext.SaveChangesAsync();
+                return product.Id;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
 
+        public async Task<int> UploadProductImage(List<ProductImage> productImage, int productId)
+        {
+            try
+            {
+                _logger.LogInformation("inserting product images to database.");
+                await _dbContext.ProductImage.AddRangeAsync(productImage);
+                await _dbContext.SaveChangesAsync();
+                return productId;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
     }
 }

@@ -1,0 +1,453 @@
+2020-09-24T15:03:19.5342155+05:30 0HM30DJFLLBJQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/values   (ca22a1cb)
+2020-09-24T15:03:19.5342340+05:30 0HM30DJFLLBJP:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:56075/  0 (ca22a1cb)
+2020-09-24T15:03:19.7498572+05:30 0HM30DJFLLBJP:00000001 [INF] Request finished in 203.6481ms 200  (791a596a)
+2020-09-24T15:03:23.7008424+05:30 0HM30DJFLLBJQ:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BlinkAndBuys.Controllers.ValuesController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:03:23.7569670+05:30 0HM30DJFLLBJQ:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:03:23.7627219+05:30 0HM30DJFLLBJQ:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.2597ms. (50a9e262)
+2020-09-24T15:03:23.7734772+05:30 0HM30DJFLLBJQ:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-09-24T15:03:24.2279720+05:30 0HM30DJFLLBJQ:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)" in 517.3149ms (afa2e885)
+2020-09-24T15:03:24.2602678+05:30 0HM30DJFLLBJQ:00000001 [INF] Request finished in 4735.2901ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:03:26.1567555+05:30 0HM30DJFLLBJP:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/favicon.ico   (ca22a1cb)
+2020-09-24T15:03:26.1870808+05:30 0HM30DJFLLBJP:00000002 [INF] Request finished in 29.4498ms 404  (791a596a)
+2020-09-24T15:04:21.2026673+05:30 0HM30DJFLLBJQ:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:04:21.2201701+05:30 0HM30DJFLLBJP:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:04:21.2325578+05:30 0HM30DJFLLBJQ:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:21.2325577+05:30 0HM30DJFLLBJP:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:21.2841525+05:30 0HM30DJFLLBJP:00000003 [INF] Request finished in 81.8332ms 204  (791a596a)
+2020-09-24T15:04:21.2853326+05:30 0HM30DJFLLBJQ:00000002 [INF] Request finished in 81.845ms 204  (791a596a)
+2020-09-24T15:04:21.3203986+05:30 0HM30DJFLLBJQ:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:21.3217252+05:30 0HM30DJFLLBJP:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:21.3249783+05:30 0HM30DJFLLBJQ:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:21.3282961+05:30 0HM30DJFLLBJP:00000004 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:22.1360706+05:30 0HM30DJFLLBJR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:22.1383801+05:30 0HM30DJFLLBJR:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:22.1524037+05:30 0HM30DJFLLBJS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:22.1564894+05:30 0HM30DJFLLBJS:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:23.7709068+05:30 0HM30DJFLLBJR:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:23.7728606+05:30 0HM30DJFLLBJP:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:23.7752994+05:30 0HM30DJFLLBJQ:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:23.7775469+05:30 0HM30DJFLLBJS:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:24.0031653+05:30 0HM30DJFLLBJT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:24.0058561+05:30 0HM30DJFLLBJT:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:24.0082991+05:30 0HM30DJFLLBJU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/json; charset=utf-8  (ca22a1cb)
+2020-09-24T15:04:24.0346589+05:30 0HM30DJFLLBJU:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:04:24.4516648+05:30 0HM30DJFLLBJT:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:24'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:24.4806464+05:30 0HM30DJFLLBJU:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:34:24'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:04:24.5182582+05:30 0HM30DJFLLBJQ:00000003 [INF] Request finished in 3205.3043ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:04:24.5213683+05:30 0HM30DJFLLBJR:00000001 [INF] Request finished in 2380.9668ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:04:24.5241263+05:30 0HM30DJFLLBJP:00000004 [INF] Request finished in 3205.3049ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:04:24.5264384+05:30 0HM30DJFLLBJS:00000001 [INF] Request finished in 2368.738ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:04:24.5299667+05:30 0HM30DJFLLBJU:00000001 [INF] Request finished in 508.3944ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:04:24.5323281+05:30 0HM30DJFLLBJT:00000001 [INF] Request finished in 513.3426ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:05:12.0720304+05:30 0HM30DJFLLBJV:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:05:12.0749953+05:30 0HM30DJFLLBK0:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:05:12.0769826+05:30 0HM30DJFLLBJV:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:12.1418203+05:30 0HM30DJFLLBK0:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:12.1442846+05:30 0HM30DJFLLBJV:00000001 [INF] Request finished in 72.5929ms 204  (791a596a)
+2020-09-24T15:05:12.1455499+05:30 0HM30DJFLLBK0:00000001 [INF] Request finished in 73.5099ms 204  (791a596a)
+2020-09-24T15:05:12.1704567+05:30 0HM30DJFLLBJV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:05:12.1752031+05:30 0HM30DJFLLBK0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:05:12.1764110+05:30 0HM30DJFLLBJV:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:12.1784043+05:30 0HM30DJFLLBK0:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:13.0896875+05:30 0HM30DJFLLBK0:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:35:12'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:05:13.0911446+05:30 0HM30DJFLLBJV:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:35:12'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:05:13.7758733+05:30 0HM30DJFLLBK1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:05:13.7797930+05:30 0HM30DJFLLBK2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:05:14.0375388+05:30 0HM30DJFLLBK1:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:14.2045783+05:30 0HM30DJFLLBK2:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:05:14.3906982+05:30 0HM30DJFLLBJV:00000002 [INF] Request finished in 1883.1775ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:05:14.4060819+05:30 0HM30DJFLLBK0:00000002 [INF] Request finished in 1876.4539ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:05:14.5074424+05:30 0HM30DJFLLBK2:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:35:14'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:05:14.6719030+05:30 0HM30DJFLLBK1:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:35:14'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:05:15.0107540+05:30 0HM30DJFLLBK2:00000001 [INF] Request finished in 902.6321ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:05:15.0129062+05:30 0HM30DJFLLBK1:00000001 [INF] Request finished in 1326.0128ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:06:49.0902989+05:30 0HM30DJFLLBK3:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:06:49.0923750+05:30 0HM30DJFLLBK3:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.0962406+05:30 0HM30DJFLLBK4:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:06:49.1031694+05:30 0HM30DJFLLBK3:00000001 [INF] Request finished in 8.6601ms 204  (791a596a)
+2020-09-24T15:06:49.1096781+05:30 0HM30DJFLLBK4:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.1341512+05:30 0HM30DJFLLBK4:00000001 [INF] Request finished in 17.2062ms 204  (791a596a)
+2020-09-24T15:06:49.4501504+05:30 0HM30DJFLLBK3:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:06:49.4552063+05:30 0HM30DJFLLBK4:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:06:49.4574062+05:30 0HM30DJFLLBK3:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.4596009+05:30 0HM30DJFLLBK4:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.5994914+05:30 0HM30DJFLLBK3:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:36:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:06:49.6013470+05:30 0HM30DJFLLBK4:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:36:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:06:49.6411806+05:30 0HM30DJFLLBK3:00000002 [INF] Request finished in 161.9026ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:06:49.6473525+05:30 0HM30DJFLLBK4:00000002 [INF] Request finished in 158.929ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:06:49.6490930+05:30 0HM30DJFLLBK5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:06:49.6537612+05:30 0HM30DJFLLBK5:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.6566619+05:30 0HM30DJFLLBK6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category application/x-www-form-urlencoded;charset=utf-8  (ca22a1cb)
+2020-09-24T15:06:49.6731730+05:30 0HM30DJFLLBK6:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:06:49.8126524+05:30 0HM30DJFLLBK5:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:36:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:06:49.8158628+05:30 0HM30DJFLLBK6:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '09/21/2020 05:01:25', Current time: '09/24/2020 09:36:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BlinkAndBuys.Helpers.JwtMiddleware.AttachUserToContext(HttpContext context, IUserRepository userService, String token) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 34
+   at BlinkAndBuys.Helpers.JwtMiddleware.Invoke(HttpContext context, IUserRepository userService) in D:\blink_and_buys_Api\BlinkAndBuys\Helpers\JwtMiddleware.cs:line 25
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-09-24T15:06:49.8472556+05:30 0HM30DJFLLBK5:00000001 [INF] Request finished in 176.1307ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:06:49.8481616+05:30 0HM30DJFLLBK6:00000001 [INF] Request finished in 171.812ms 500 text/html; charset=utf-8 (791a596a)
+2020-09-24T15:07:17.3094815+05:30 0HM30DJFLLBK7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:07:17.3123704+05:30 0HM30DJFLLBK7:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:07:17.3175209+05:30 0HM30DJFLLBK8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:07:17.3219723+05:30 0HM30DJFLLBK8:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:07:18.0750307+05:30 0HM30DJFLLBK8:00000001 [INF] Route matched with "{action = \"GetUsers\", controller = \"Shared\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers()" on controller "BlinkAndBuys.Controllers.SharedController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:07:18.0833029+05:30 0HM30DJFLLBK8:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:07:18.1312591+05:30 0HM30DJFLLBK8:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:07:18.1562873+05:30 0HM30DJFLLBK7:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:07:18.1602482+05:30 0HM30DJFLLBK7:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:07:18.2418529+05:30 0HM30DJFLLBK7:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:07:18.2775875+05:30 0HM30DJFLLBK7:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-09-24T15:07:19.3625030+05:30 0HM30DJFLLBK8:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:07:19.3634875+05:30 0HM30DJFLLBK7:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:07:48.0969394+05:30 0HM30DJFLLBK7:00000001 [INF] Executed DbCommand ("2,137"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-09-24T15:07:48.2915230+05:30 0HM30DJFLLBK8:00000001 [INF] Executed DbCommand ("2,340"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccountHolderName], [a].[AccountNumber], [a].[Address], [a].[CancelledChequePath], [a].[CompanyName], [a].[ContactNumber], [a].[CreatedDt], [a].[Email], [a].[GstNumber], [a].[IdProofPath], [a].[IfscCode], [a].[IsAccountVerified], [a].[IsActive], [a].[IsDeleted], [a].[IsGstAvailable], [a].[IsNumberVerified], [a].[ModifiedBy], [a].[ModifiedDt], [a].[Name], [a].[Password], [a].[ProductCategoryId], [a].[RoleId], [a].[StreetAddress], [a].[ZipCode]
+FROM [Account] AS [a]" (0723d8ff)
+2020-09-24T15:07:49.2512415+05:30 0HM30DJFLLBK7:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 31006.5031ms. (50a9e262)
+2020-09-24T15:07:49.2719234+05:30 0HM30DJFLLBK7:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:07:49.8147734+05:30 0HM30DJFLLBK7:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 31655.7905ms (afa2e885)
+2020-09-24T15:07:49.8482673+05:30 0HM30DJFLLBK7:00000001 [INF] Request finished in 32523.111ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:07:49.8685857+05:30 0HM30DJFLLBK8:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 31735.1994ms. (50a9e262)
+2020-09-24T15:07:49.8709650+05:30 0HM30DJFLLBK8:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.AccountModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:07:50.2485858+05:30 0HM30DJFLLBK8:00000001 [INF] Executed action "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" in 32170.3725ms (afa2e885)
+2020-09-24T15:07:50.2517977+05:30 0HM30DJFLLBK8:00000001 [INF] Request finished in 32936.0118ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:09:31.2809055+05:30 0HM30DJFLLBK9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:09:31.2837040+05:30 0HM30DJFLLBK9:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3320469+05:30 0HM30DJFLLBKA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-09-24T15:09:31.3363887+05:30 0HM30DJFLLBKA:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3410397+05:30 0HM30DJFLLBK9:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:09:31.3438528+05:30 0HM30DJFLLBKB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:09:31.3453654+05:30 0HM30DJFLLBK9:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3486030+05:30 0HM30DJFLLBKB:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3776069+05:30 0HM30DJFLLBK9:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:09:31.3818697+05:30 0HM30DJFLLBKA:00000001 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:09:31.3850583+05:30 0HM30DJFLLBKB:00000001 [INF] Route matched with "{action = \"GetUsers\", controller = \"Shared\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers()" on controller "BlinkAndBuys.Controllers.SharedController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:09:31.3865822+05:30 0HM30DJFLLBKA:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3895583+05:30 0HM30DJFLLBK9:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-09-24T15:09:31.3935649+05:30 0HM30DJFLLBKB:00000001 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:09:31.3967015+05:30 0HM30DJFLLBKA:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:09:31.3998145+05:30 0HM30DJFLLBK9:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:09:31.4028590+05:30 0HM30DJFLLBKB:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:09:31.4067865+05:30 0HM30DJFLLBKB:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:09:31.4128073+05:30 0HM30DJFLLBKA:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:09:31.7719413+05:30 0HM30DJFLLBK9:00000001 [INF] Executed DbCommand ("340"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-09-24T15:09:31.8111191+05:30 0HM30DJFLLBK9:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 419.089ms. (50a9e262)
+2020-09-24T15:09:31.8195458+05:30 0HM30DJFLLBKA:00000001 [INF] Executed DbCommand ("222"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-09-24T15:09:31.8226748+05:30 0HM30DJFLLBK9:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:09:31.8277518+05:30 0HM30DJFLLBK9:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 481.8937ms (afa2e885)
+2020-09-24T15:09:31.8322850+05:30 0HM30DJFLLBK9:00000001 [INF] Request finished in 553.0219ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:10:06.6633023+05:30 0HM30DJFLLBKA:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 35200.1759ms. (50a9e262)
+2020-09-24T15:10:06.6659315+05:30 0HM30DJFLLBKA:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:10:06.6720125+05:30 0HM30DJFLLBKA:00000001 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 35287.3832ms (afa2e885)
+2020-09-24T15:10:06.6744827+05:30 0HM30DJFLLBKA:00000001 [INF] Request finished in 35388.085ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:10:09.0602568+05:30 0HM30DJFLLBKB:00000001 [ERR] Failed executing DbCommand ("37,311"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccountHolderName], [a].[AccountNumber], [a].[Address], [a].[CancelledChequePath], [a].[CompanyName], [a].[ContactNumber], [a].[CreatedDt], [a].[Email], [a].[GstNumber], [a].[IdProofPath], [a].[IfscCode], [a].[IsAccountVerified], [a].[IsActive], [a].[IsDeleted], [a].[IsGstAvailable], [a].[IsNumberVerified], [a].[ModifiedBy], [a].[ModifiedDt], [a].[Name], [a].[Password], [a].[ProductCategoryId], [a].[RoleId], [a].[StreetAddress], [a].[ZipCode]
+FROM [Account] AS [a]" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:ce27e3b8-8894-4fe2-b1f4-3e277b50b90c
+Error Number:-2,State:0,Class:11
+2020-09-24T15:10:09.6469254+05:30 0HM30DJFLLBKB:00000001 [ERR] An exception occurred in the database while iterating the results of a query for context type '"Grocery.Data.BlinkandBuysContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:ce27e3b8-8894-4fe2-b1f4-3e277b50b90c
+Error Number:-2,State:0,Class:11" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at DataAccessLayer.Repository.UserRepository.GetUsers() in D:\blink_and_buys_Api\DataAccessLayer\Repository\UserRepository.cs:line 134
+ClientConnectionId:ce27e3b8-8894-4fe2-b1f4-3e277b50b90c
+Error Number:-2,State:0,Class:11
+2020-09-24T15:10:36.1956017+05:30 0HM30DJFLLBKB:00000001 [ERR] Following exception has occurred: "System.Data.SqlClient.SqlException (0x80131904): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at DataAccessLayer.Repository.UserRepository.GetUsers() in D:\blink_and_buys_Api\DataAccessLayer\Repository\UserRepository.cs:line 134
+ClientConnectionId:ce27e3b8-8894-4fe2-b1f4-3e277b50b90c
+Error Number:-2,State:0,Class:11" (8392aa06)
+2020-09-24T15:10:39.6330330+05:30 0HM30DJFLLBKB:00000001 [ERR] Following exception has occurred: "System.Data.SqlClient.SqlException (0x80131904): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at DataAccessLayer.Repository.UserRepository.GetUsers() in D:\blink_and_buys_Api\DataAccessLayer\Repository\UserRepository.cs:line 139
+   at BlinkAndBuys.Controllers.SharedController.GetUsers() in D:\blink_and_buys_Api\BlinkAndBuys\Controllers\SharedController.cs:line 34
+ClientConnectionId:ce27e3b8-8894-4fe2-b1f4-3e277b50b90c
+Error Number:-2,State:0,Class:11" (8392aa06)
+2020-09-24T15:10:39.7775682+05:30 0HM30DJFLLBKB:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.BadRequestResult" in 68371.8606ms. (50a9e262)
+2020-09-24T15:10:39.7868927+05:30 0HM30DJFLLBKB:00000001 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400 (e28ccfae)
+2020-09-24T15:10:39.8736299+05:30 0HM30DJFLLBKB:00000001 [INF] Executed action "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" in 68484.6437ms (afa2e885)
+2020-09-24T15:10:39.8764639+05:30 0HM30DJFLLBKB:00000001 [INF] Request finished in 68536.2269ms 400  (791a596a)
+2020-09-24T15:10:50.5685808+05:30 0HM30DJFLLBKA:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-09-24T15:10:50.5723200+05:30 0HM30DJFLLBKA:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:50.5760265+05:30 0HM30DJFLLBKA:00000002 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:10:50.5803477+05:30 0HM30DJFLLBKA:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:50.5847712+05:30 0HM30DJFLLBKA:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:10:50.5888958+05:30 0HM30DJFLLBKA:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:10:50.7068768+05:30 0HM30DJFLLBKA:00000002 [INF] Executed DbCommand ("114"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-09-24T15:10:50.7106490+05:30 0HM30DJFLLBKA:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 122.8438ms. (50a9e262)
+2020-09-24T15:10:50.7135049+05:30 0HM30DJFLLBKA:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:10:50.7185070+05:30 0HM30DJFLLBKA:00000002 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 137.8937ms (afa2e885)
+2020-09-24T15:10:50.7216472+05:30 0HM30DJFLLBKA:00000002 [INF] Request finished in 153.6244ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:10:51.5667269+05:30 0HM30DJFLLBKB:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-09-24T15:10:51.5692485+05:30 0HM30DJFLLBKB:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:51.5725660+05:30 0HM30DJFLLBKB:00000002 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:10:51.5749773+05:30 0HM30DJFLLBKB:00000002 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:51.5776370+05:30 0HM30DJFLLBKB:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:10:51.5808141+05:30 0HM30DJFLLBKB:00000002 [ERR] Getting product categories from db. (61d9063c)
+2020-09-24T15:10:51.5842400+05:30 0HM30DJFLLBKB:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:10:51.5904207+05:30 0HM30DJFLLBKB:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-09-24T15:10:51.5951274+05:30 0HM30DJFLLBKB:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 13.8121ms. (50a9e262)
+2020-09-24T15:10:51.5988875+05:30 0HM30DJFLLBKB:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:10:51.6023373+05:30 0HM30DJFLLBKB:00000002 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 26.6557ms (afa2e885)
+2020-09-24T15:10:51.6059197+05:30 0HM30DJFLLBKB:00000002 [INF] Request finished in 39.1777ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:10:51.6172103+05:30 0HM30DJFLLBKA:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-09-24T15:10:51.6210143+05:30 0HM30DJFLLBKA:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:51.6263748+05:30 0HM30DJFLLBKA:00000003 [INF] Route matched with "{action = \"GetUsers\", controller = \"Shared\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers()" on controller "BlinkAndBuys.Controllers.SharedController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:10:51.6301969+05:30 0HM30DJFLLBKA:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:10:51.6346066+05:30 0HM30DJFLLBKA:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:10:51.6387666+05:30 0HM30DJFLLBKA:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:10:51.6584193+05:30 0HM30DJFLLBKA:00000003 [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccountHolderName], [a].[AccountNumber], [a].[Address], [a].[CancelledChequePath], [a].[CompanyName], [a].[ContactNumber], [a].[CreatedDt], [a].[Email], [a].[GstNumber], [a].[IdProofPath], [a].[IfscCode], [a].[IsAccountVerified], [a].[IsActive], [a].[IsDeleted], [a].[IsGstAvailable], [a].[IsNumberVerified], [a].[ModifiedBy], [a].[ModifiedDt], [a].[Name], [a].[Password], [a].[ProductCategoryId], [a].[RoleId], [a].[StreetAddress], [a].[ZipCode]
+FROM [Account] AS [a]" (0723d8ff)
+2020-09-24T15:10:52.1417623+05:30 0HM30DJFLLBKA:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 503.8073ms. (50a9e262)
+2020-09-24T15:10:52.1479368+05:30 0HM30DJFLLBKA:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.AccountModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:10:52.1550932+05:30 0HM30DJFLLBKA:00000003 [INF] Executed action "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" in 525.4097ms (afa2e885)
+2020-09-24T15:10:52.1589801+05:30 0HM30DJFLLBKA:00000003 [INF] Request finished in 541.7472ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:11:07.7887036+05:30 0HM30DJFLLBKB:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-09-24T15:11:07.7936422+05:30 0HM30DJFLLBKB:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:11:07.7976611+05:30 0HM30DJFLLBKB:00000003 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:11:07.8004689+05:30 0HM30DJFLLBKB:00000003 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:11:07.8034884+05:30 0HM30DJFLLBKB:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:11:07.8067037+05:30 0HM30DJFLLBKB:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:11:07.8143400+05:30 0HM30DJFLLBKB:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-09-24T15:11:07.8180773+05:30 0HM30DJFLLBKB:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 11.4664ms. (50a9e262)
+2020-09-24T15:11:07.8214867+05:30 0HM30DJFLLBKB:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:11:07.8253053+05:30 0HM30DJFLLBKB:00000003 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 24.0785ms (afa2e885)
+2020-09-24T15:11:07.8316710+05:30 0HM30DJFLLBKB:00000003 [INF] Request finished in 40.118ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:11:13.0043909+05:30 0HM30DJFLLBKA:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-09-24T15:11:13.0080106+05:30 0HM30DJFLLBKA:00000004 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:11:13.0508737+05:30 0HM30DJFLLBKA:00000004 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:11:13.0539035+05:30 0HM30DJFLLBKA:00000004 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:11:13.0572094+05:30 0HM30DJFLLBKA:00000004 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:11:13.1801268+05:30 0HM30DJFLLBKA:00000004 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:11:14.0254917+05:30 0HM30DJFLLBKA:00000004 [INF] Executed DbCommand ("315"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-09-24T15:11:55.3109485+05:30 0HM30DJFLLBKA:00000004 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 42190.3393ms. (50a9e262)
+2020-09-24T15:11:55.3194927+05:30 0HM30DJFLLBKA:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:11:55.3460656+05:30 0HM30DJFLLBKA:00000004 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 42288.4482ms (afa2e885)
+2020-09-24T15:11:55.3677657+05:30 0HM30DJFLLBKA:00000004 [INF] Request finished in 42359.6481ms 200 application/json; charset=utf-8 (791a596a)
+2020-09-24T15:12:45.7358375+05:30 0HM30DJFLLBKA:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-09-24T15:12:45.7380501+05:30 0HM30DJFLLBKA:00000005 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:12:45.7408309+05:30 0HM30DJFLLBKA:00000005 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-09-24T15:12:45.7430609+05:30 0HM30DJFLLBKA:00000005 [INF] Policy execution successful. (0204925d)
+2020-09-24T15:12:45.7459051+05:30 0HM30DJFLLBKA:00000005 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-09-24T15:12:45.7487224+05:30 0HM30DJFLLBKA:00000005 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-09-24T15:12:45.7531004+05:30 0HM30DJFLLBKA:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-09-24T15:12:45.7553180+05:30 0HM30DJFLLBKA:00000005 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 7.7209ms. (50a9e262)
+2020-09-24T15:12:45.7569622+05:30 0HM30DJFLLBKA:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-09-24T15:12:45.7594946+05:30 0HM30DJFLLBKA:00000005 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 16.3116ms (afa2e885)
+2020-09-24T15:12:45.7620405+05:30 0HM30DJFLLBKA:00000005 [INF] Request finished in 26.0758ms 200 application/json; charset=utf-8 (791a596a)

@@ -96,7 +96,7 @@ namespace BlinkAndBuys
                 app.UseHsts();
             }
 
-            loggerFactory.AddFile("Logs/myapp-{Date}.txt");
+            loggerFactory.AddFile("Logs/BlinkBuys-{Date}.txt");
 
             app.UseHttpsRedirection();
             app.UseCors("CORS");

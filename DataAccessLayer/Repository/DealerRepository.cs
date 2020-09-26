@@ -1,9 +1,9 @@
 ﻿using DataAccessLayer.IRepository;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
 using Grocery.Data;
+using Microsoft.Extensions.Logging;
 
 namespace DataAccessLayer.Repository
 {
@@ -11,9 +11,11 @@ namespace DataAccessLayer.Repository
     {
         #region"CONTEXT"
         private readonly BlinkandBuysContext _dbContext;
-        public DealerRepository(BlinkandBuysContext dbContext, IMapper mapper)
+        private readonly ILogger<DealerRepository> _logger;
+        public DealerRepository(BlinkandBuysContext dbContext, ILogger<DealerRepository> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
         #endregion
 
@@ -36,6 +38,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -59,6 +62,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }
@@ -70,7 +74,7 @@ namespace DataAccessLayer.Repository
                 var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
                 if (user != null)
                 {
-                    user.IsActive = true;
+                    user.IsActive = false;
                     user.ModifiedDt = DateTime.Now;
                     user.ModifiedBy = loggedInUser;
 
@@ -82,6 +86,7 @@ namespace DataAccessLayer.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }

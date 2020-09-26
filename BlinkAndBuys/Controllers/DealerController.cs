@@ -8,6 +8,7 @@ using DataAccessLayer.IRepository;
 using Database.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace BlinkAndBuys.Controllers
@@ -21,12 +22,15 @@ namespace BlinkAndBuys.Controllers
         private IDealerRepository _dealerRepository;
         private readonly IMapper _mapper;
         private readonly SmtpCredentials _smtpCredentials;
+        private readonly ILogger<DealerController> _logger;
 
-        public DealerController(IDealerRepository dealerRepository, IMapper mapper, IOptions<SmtpCredentials> smtpCredentials)
+        public DealerController(IDealerRepository dealerRepository, IMapper mapper, IOptions<SmtpCredentials> smtpCredentials,
+            ILogger<DealerController> logger)
         {
             _dealerRepository = dealerRepository;
             _mapper = mapper;
             _smtpCredentials = smtpCredentials.Value;
+            _logger = logger;
         }
         #endregion
 
@@ -34,27 +38,54 @@ namespace BlinkAndBuys.Controllers
         [Route("verify/{userId}")]
         public async Task<IActionResult> VerifyDealer(int userId)
         {
-            var loggedInUser = Request.HttpContext.Items["userId"];
-            var res = await _dealerRepository.VerifyDealer(userId, Convert.ToInt32(loggedInUser));
-            return BadRequest(res);
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _dealerRepository.VerifyDealer(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+           
         }
 
         [HttpDelete]
         [Route("{userId}")]
         public async Task<IActionResult> DeleteDealer(int userId)
         {
-            var loggedInUser = Request.HttpContext.Items["userId"];
-            var res = await _dealerRepository.DeleteDealer(userId, Convert.ToInt32(loggedInUser));
-            return Ok(res);
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _dealerRepository.DeleteDealer(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+            
         }
 
         [HttpGet]
         [Route("block/{userId}")]
         public async Task<IActionResult> BlockDealer(int userId)
         {
-            var loggedInUser = Request.HttpContext.Items["userId"];
-            var res = await _dealerRepository.BlockDealer(userId, Convert.ToInt32(loggedInUser));
-            return Ok(res);
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _dealerRepository.BlockDealer(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        
         }
     }
 }

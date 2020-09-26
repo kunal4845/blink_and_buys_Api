@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
@@ -44,6 +47,88 @@ namespace BlinkAndBuys.Controllers
                 _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
+        }
+
+        [HttpPost]
+        [Route("")]
+        public async Task<IActionResult> Upsert(ProductModel productModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var product = _mapper.Map<ProductModel, Product>(productModel);
+                    int id = await _productRepository.Upsert(product);
+                    if (id > 0)
+                    {
+                        return Ok(id);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError("Following exception has occurred: {0}", ex);
+                    return BadRequest();
+                }
+            }
+            _logger.LogError("Model state is not valid, Upsert function called.");
+            return BadRequest();
+        }
+
+        [HttpPost, DisableRequestSizeLimit]
+        [Route("upload/{productId}/{masterImage}")]
+        public async Task<IActionResult> UploadProductImage(int productId, string masterImage)
+        {
+            ProductModel product = new ProductModel();
+            try
+            {
+                var files = Request.Form.Files;
+                var folderName = Path.Combine("Resources", "Images");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+
+                _logger.LogInformation("Number of files are: {0}", files.Count);
+
+                if (files.Any(f => f.Length == 0))
+                {
+                    return BadRequest();
+                }
+                var productImage = new ProductImageModel();
+
+                foreach (var file in files)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName); //you can add this path to a list and then return all dbPaths to the client if require
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+                    var mediaType = Core.Helper.Helpers.GetMIMEType(fileName);
+                    productImage = new ProductImageModel()
+                    {
+                        MediaType = mediaType,
+                        Name = fileName,
+                        ImagePath = mediaType.StartsWith("image") ? fullPath : null,
+                        VideoPath = mediaType.StartsWith("video") ? fullPath : null,
+                        IsPrimaryImage = fileName == masterImage ? true : false,
+                        ProductId = productId
+                    };
+                    product.ProductImages.Add(productImage);
+                }
+
+                var productImages = _mapper.Map<List<ProductImageModel>, List<ProductImage>>(product.ProductImages);
+                var id = await _productRepository.UploadProductImage(productImages, productId);
+                _logger.LogInformation("Images saved to db and id returned:{0}", id);
+                if (id > 0)
+                {
+                    return Ok(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+            return BadRequest();
         }
     }
 }

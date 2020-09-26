@@ -10,6 +10,8 @@ namespace Grocery.Data
         public DbSet<City> City { get; set; }
         public DbSet<State> State { get; set; }
         public DbSet<ProductCategory> ProductCategory { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductImage> ProductImage { get; set; }
 
         public BlinkandBuysContext(DbContextOptions<BlinkandBuysContext> options) : base(options)
         {
