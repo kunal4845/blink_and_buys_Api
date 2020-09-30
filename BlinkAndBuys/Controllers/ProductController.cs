@@ -24,7 +24,6 @@ namespace BlinkAndBuys.Controllers
         private IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<ProductController> _logger;
-
         public ProductController(ILogger<ProductController> logger, IProductRepository productRepository, IMapper mapper)
         {
             _logger = logger;
@@ -53,25 +52,18 @@ namespace BlinkAndBuys.Controllers
         [Route("")]
         public async Task<IActionResult> Upsert(ProductModel productModel)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    var product = _mapper.Map<ProductModel, Product>(productModel);
-                    int id = await _productRepository.Upsert(product);
-                    if (id > 0)
-                    {
-                        return Ok(id);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError("Following exception has occurred: {0}", ex);
-                    return BadRequest();
-                }
+                var product = _mapper.Map<ProductModel, Product>(productModel);
+                int id = await _productRepository.Upsert(product);
+
+                return Ok(id);
             }
-            _logger.LogError("Model state is not valid, Upsert function called.");
-            return BadRequest();
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
         }
 
         [HttpPost, DisableRequestSizeLimit]
@@ -103,15 +95,16 @@ namespace BlinkAndBuys.Controllers
                     {
                         file.CopyTo(stream);
                     }
-                    var mediaType = Core.Helper.Helpers.GetMIMEType(fileName);
+
                     productImage = new ProductImageModel()
                     {
-                        MediaType = mediaType,
                         Name = fileName,
-                        ImagePath = mediaType.StartsWith("image") ? fullPath : null,
-                        VideoPath = mediaType.StartsWith("video") ? fullPath : null,
+                        ImagePath = fullPath,
                         IsPrimaryImage = fileName == masterImage ? true : false,
-                        ProductId = productId
+                        ProductId = productId,
+                        IsDeleted = false,
+                        CreatedDt = DateTime.Now,
+                        CreatedBy = 1
                     };
                     product.ProductImages.Add(productImage);
                 }
@@ -119,16 +112,80 @@ namespace BlinkAndBuys.Controllers
                 var productImages = _mapper.Map<List<ProductImageModel>, List<ProductImage>>(product.ProductImages);
                 var id = await _productRepository.UploadProductImage(productImages, productId);
                 _logger.LogInformation("Images saved to db and id returned:{0}", id);
-                if (id > 0)
-                {
-                    return Ok(id);
-                }
+
+                return Ok(id);
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
-            return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("list/{id?}")]
+        public async Task<IActionResult> GetProductListAsync(int? id)
+        {
+            try
+            {
+                var products = await _productRepository.GetProductsAsync(id);
+                return Ok(_mapper.Map<List<Product>, List<ProductModel>>(products));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("verify/{productId}")]
+        public async Task<IActionResult> VerifyProduct(int productId)
+        {
+            try
+            {
+                var product = await _productRepository.GetProductsAsync(productId);
+                if (product.Count > 0)
+                {
+                    product[0].IsVerified = true;
+                    product[0].ModifiedBy = 1;
+                    product[0].ModifiedDt = DateTime.Now;
+
+                    var id = await _productRepository.VerifyProduct(product[0]);
+                    return Ok(product[0]);
+                }
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete]
+        [Route("delete/{productId}")]
+        public async Task<IActionResult> Delete(int productId)
+        {
+            try
+            {
+                var product = await _productRepository.GetProductsAsync(productId);
+                if (product.Count > 0)
+                {
+                    product[0].IsDeleted = true;
+                    product[0].ModifiedBy = 1;
+                    product[0].ModifiedDt = DateTime.Now;
+
+                    var id = await _productRepository.Delete(product[0]);
+                    return Ok(product[0]);
+                }
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
         }
     }
 }

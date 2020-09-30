@@ -51,6 +51,12 @@ namespace DataAccessLayer.Repository
             try
             {
                 _logger.LogInformation("inserting product record to database.");
+                product.IsActive = true;
+                product.IsDeleted = false;
+                product.IsVerified = false;
+                product.CreatedBy = 1;
+                product.CreatedDt = DateTime.Now;
+
                 await _dbContext.Product.AddAsync(product);
                 await _dbContext.SaveChangesAsync();
                 return product.Id;
@@ -61,15 +67,70 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
-
         public async Task<int> UploadProductImage(List<ProductImage> productImage, int productId)
         {
             try
             {
                 _logger.LogInformation("inserting product images to database.");
+
                 await _dbContext.ProductImage.AddRangeAsync(productImage);
                 await _dbContext.SaveChangesAsync();
                 return productId;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+        public async Task<List<Product>> GetProductsAsync(int? id)
+        {
+            try
+            {
+                _logger.LogError("Getting product list from db.");
+
+                List<Product> products = new List<Product>();
+                if (id != null)
+                {
+                    var product = await _dbContext.Product.FirstOrDefaultAsync(x => x.Id == id);
+                    products.Add(product);
+                }
+                else
+                {
+                    products = await _dbContext.Product.ToListAsync();
+                }
+
+                return products;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+        public async Task<int> VerifyProduct(Product product)
+        {
+            try
+            {
+                _logger.LogError("Getting product list from db.");
+                _dbContext.Product.Update(product);
+                await _dbContext.SaveChangesAsync();
+                return product.Id;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+        public async Task<int> Delete(Product product)
+        {
+            try
+            {
+                _logger.LogError("Getting product list from db.");
+                _dbContext.Product.Update(product);
+                await _dbContext.SaveChangesAsync();
+                return product.Id;
             }
             catch (Exception ex)
             {

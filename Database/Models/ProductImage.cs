@@ -13,5 +13,8 @@ namespace Database.Models
         public bool IsPrimaryImage { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? CreatedDt { get; set; }
+        public int CreatedBy { get; set; }
+        public DateTime ModifiedDt { get; set; }
+        public int ModifiedBy { get; set; }
     }
 }

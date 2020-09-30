@@ -10,11 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace BlinkAndBuys.Controllers {
+namespace BlinkAndBuys.Controllers
+{
     [Route("api/[controller]")]
     [EnableCors("CORS")]
     [ApiController]
-    public class UserController : ControllerBase {
+    public class UserController : ControllerBase
+    {
         #region Initiate
         private IUserRepository _userService;
         private readonly IMapper _mapper;
@@ -22,7 +24,8 @@ namespace BlinkAndBuys.Controllers {
         private readonly AppSettings _appSettings;
 
         public UserController(IUserRepository userService, IMapper mapper, IConfiguration config,
-            IOptions<AppSettings> appSettings) {
+            IOptions<AppSettings> appSettings)
+        {
             _userService = userService;
             _mapper = mapper;
             _config = config;
@@ -32,16 +35,21 @@ namespace BlinkAndBuys.Controllers {
 
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> Get() {
-            try {
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
                 var userId = Request.HttpContext.Items["userId"];
+                userId = 1;
                 var user = new Account();
-                if (userId != null) {
+                if (userId != null)
+                {
                     user = await _userService.GetUserById(Convert.ToInt32(userId));
                 }
                 return Ok(_mapper.Map<Account, AccountModel>(user));
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return BadRequest();
             }
         }
