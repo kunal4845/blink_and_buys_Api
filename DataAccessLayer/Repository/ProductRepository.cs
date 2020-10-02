@@ -6,6 +6,7 @@ using Grocery.Data;
 using Database.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace DataAccessLayer.Repository
 {
@@ -138,5 +139,53 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
+        public List<ProductImage> GetProductImages(int? productId)
+        {
+            try
+            {
+                _logger.LogError("Getting product images from db.");
+
+                List<ProductImage> productImages = new List<ProductImage>();
+                if (productId != null)
+                {
+                    var images = _dbContext.ProductImage.ToList();
+                    productImages = images.Where(x => x.ProductId == productId).ToList();
+                }
+                else
+                {
+                    productImages = _dbContext.ProductImage.ToList();
+                }
+
+                return productImages;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<List<Product>> GetRecommendedProducts()
+        {
+            try
+            {
+                _logger.LogError("Getting product list from db.");
+                List<Product> products = new List<Product>();
+                products = await _dbContext.Product.ToListAsync();
+
+                Random rand = new Random();
+                int toSkip = rand.Next(1, products.Count);
+                return products.OrderBy(r => Guid.NewGuid()).Skip(toSkip).Take(10).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+
+
     }
 }

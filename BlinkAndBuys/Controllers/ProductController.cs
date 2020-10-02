@@ -96,10 +96,13 @@ namespace BlinkAndBuys.Controllers
                         file.CopyTo(stream);
                     }
 
+                    _logger.LogInformation("Convert images to base64.");
+                    byte[] image = System.IO.File.ReadAllBytes(pathToSave + "\\" + fileName);
+
                     productImage = new ProductImageModel()
                     {
                         Name = fileName,
-                        ImagePath = fullPath,
+                        ImagePath = Convert.ToBase64String(image),
                         IsPrimaryImage = fileName == masterImage ? true : false,
                         ProductId = productId,
                         IsDeleted = false,
@@ -129,7 +132,17 @@ namespace BlinkAndBuys.Controllers
             try
             {
                 var products = await _productRepository.GetProductsAsync(id);
-                return Ok(_mapper.Map<List<Product>, List<ProductModel>>(products));
+                var response = _mapper.Map<List<Product>, List<ProductModel>>(products);
+
+                foreach (var product in response)
+                {
+                    _logger.LogInformation("Fetching product images for product id: {0}", product.Id);
+                    var images = _productRepository.GetProductImages(product.Id);
+                    var productImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
+                    product.ProductImages = productImages;
+                }
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -180,6 +193,32 @@ namespace BlinkAndBuys.Controllers
                     return Ok(product[0]);
                 }
                 return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("list/recommended")]
+        public async Task<IActionResult> GetRecommendedProducts()
+        {
+            try
+            {
+                var products = await _productRepository.GetRecommendedProducts();
+                var response = _mapper.Map<List<Product>, List<ProductModel>>(products);
+
+                foreach (var product in response)
+                {
+                    _logger.LogInformation("Fetching product images for product id: {0}", product.Id);
+                    var images = _productRepository.GetProductImages(product.Id);
+                    var productImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
+                    product.ProductImages = productImages;
+                }
+
+                return Ok(response);
             }
             catch (Exception ex)
             {

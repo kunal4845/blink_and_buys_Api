@@ -12,5 +12,8 @@ namespace DataAccessLayer.IRepository
         Task<List<Product>> GetProductsAsync(int? id);
         Task<int> VerifyProduct(Product product);
         Task<int> Delete(Product product);
+        List<ProductImage> GetProductImages(int? productId);
+
+        Task<List<Product>> GetRecommendedProducts();
     }
 }
