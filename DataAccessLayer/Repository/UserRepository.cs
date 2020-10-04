@@ -27,12 +27,21 @@ namespace DataAccessLayer.Repository
         {
             try
             {
+                if (account.RoleId == (int)ERole.Customer)
+                {
+                    account.IsAccountVerified = true;
+                    account.IsNumberVerified = true;
+                }
+                else
+                {
+                    account.IsAccountVerified = false;
+                }
+
                 account.IsActive = true;
                 account.IsDeleted = false;
-                account.IsAccountVerified = false;
                 account.CreatedDt = DateTime.Now;
                 account.ModifiedDt = DateTime.Now;
-                account.RoleId = (int)ERole.Dealer;
+                //account.RoleId = (int)ERole.Dealer;
 
                 await _dbContext.Account.AddAsync(account);
                 await _dbContext.SaveChangesAsync();
@@ -50,11 +59,11 @@ namespace DataAccessLayer.Repository
             try
             {
                 Account user = null;
-                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower());
+                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower() && x.RoleId == account.RoleId);
                 if (user != null)
                 {
                     user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
-                                        && x.Password == account.Password);
+                                        && x.Password == account.Password && x.RoleId == account.RoleId);
                     return user;
                 }
                 return user;
@@ -135,7 +144,8 @@ namespace DataAccessLayer.Repository
                 return users;
             }
             catch (Exception ex)
-            {_logger.LogError("Following exception has occurred: {0}", ex);
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 throw ex;
             }
         }

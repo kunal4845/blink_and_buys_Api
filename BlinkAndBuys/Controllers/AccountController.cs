@@ -49,30 +49,6 @@ namespace GroceryStore.Controllers
         }
         #endregion
 
-        private string GenerateJwtToken(Account user)
-        {
-            // generate token that is valid for 7 days
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
-                SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-
-        private async Task<Account> AuthenticateUser(Account account)
-        {
-            var password = Core.Helper.Helpers.EncodePasswordMd5(account.Password);
-            account.Password = password;
-            Account user = await _userService.AuthenticateUser(account);
-            return user;
-        }
-
         [HttpPost]
         [Route("signUp")]
         public async Task<IActionResult> SignUp([FromForm] AccountModel accountModel)
@@ -161,42 +137,38 @@ namespace GroceryStore.Controllers
         [Route("signIn")]
         public async Task<IActionResult> SignIn([FromBody] AccountModel accountModel)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
+                var account = _mapper.Map<AccountModel, Account>(accountModel);
+                var user = await AuthenticateUser(account);
+                if (user == null) return NotFound();
+
+                if (user.Id > 0)
                 {
-                    var account = _mapper.Map<AccountModel, Account>(accountModel);
-                    var user = await AuthenticateUser(account);
-                    if (user == null) return NotFound();
-
-                    if (user.Id > 0)
+                    var genToken = GenerateJwtToken(user);
+                    LoginToken loginToken = new LoginToken
                     {
-                        var genToken = GenerateJwtToken(user);
-                        LoginToken loginToken = new LoginToken
-                        {
-                            Token = genToken,
-                            UserId = user.Id,
-                            CreatedDt = DateTime.Now
-                        };
+                        Token = genToken,
+                        UserId = user.Id,
+                        CreatedDt = DateTime.Now
+                    };
 
-                        var token = await _userService.LoginToken(loginToken);
-                        var response = _mapper.Map<Account, AccountModel>(user);
+                    var token = await _userService.LoginToken(loginToken);
+                    var response = _mapper.Map<Account, AccountModel>(user);
 
-                        response.Token = genToken;
-                        return Ok(response);
-                    }
-                    else
-                    {
-                        return NotFound();
-                    }
+                    response.Token = genToken;
+                    return Ok(response);
                 }
-                catch (Exception ex)
+                else
                 {
-                    _logger.LogError("Following exception has occurred: {0}", ex);
-                    return BadRequest();
+                    return NotFound();
                 }
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
         }
 
         [HttpGet]
@@ -252,6 +224,102 @@ namespace GroceryStore.Controllers
                 _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest(ex);
             }
+        }
+
+        [HttpPost]
+        [Route("user-register")]
+        public async Task<IActionResult> UserRegister([FromBody] AccountModel accountModel)
+        {
+            try
+            {
+                var account = _mapper.Map<AccountModel, Account>(accountModel);
+                _logger.LogInformation("Authenticating user in database.");
+                Account user = await AuthenticateUser(account);
+                if (user == null)
+                {
+                    account.Password = Core.Helper.Helpers.EncodePasswordMd5(accountModel.Password);
+                    _logger.LogInformation("Inserting record to database.");
+                    user = await _userService.SignUp(account);
+                }
+
+                if (user.Id > 0)
+                {
+                    _logger.LogInformation("Generating token.");
+                    var genToken = GenerateJwtToken(user);
+                    LoginToken loginToken = new LoginToken
+                    {
+                        Id = 0,
+                        Token = genToken,
+                        UserId = user.Id,
+                        CreatedDt = DateTime.Now
+                    };
+
+                    _logger.LogInformation("Inserting toke to db.");
+                    var token = await _userService.LoginToken(loginToken);
+                    var response = _mapper.Map<Account, AccountModel>(user);
+                    response.Token = genToken;
+                    response.Password = "";
+                    return Ok(response);
+                }
+                else
+                {
+                    _logger.LogError("user Id is less than 0");
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("getUserByUserName/{email}")]
+        public async Task<IActionResult> GetUserByUserName(string email)
+        {
+            try
+            {
+                _logger.LogInformation("check email exists: email {0}", email);
+                if (!string.IsNullOrEmpty(email))
+                {
+                    var user = await _userService.CheckEmailExists(email);
+                    if (user != null)
+                    {
+                        return Ok(user);
+                    }
+                }
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest(ex);
+            }
+        }
+
+        private string GenerateJwtToken(Account user)
+        {
+            // generate token that is valid for 7 days
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
+
+        private async Task<Account> AuthenticateUser(Account account)
+        {
+            var password = Core.Helper.Helpers.EncodePasswordMd5(account.Password);
+            account.Password = password;
+            Account user = await _userService.AuthenticateUser(account);
+            return user;
         }
     }
 }

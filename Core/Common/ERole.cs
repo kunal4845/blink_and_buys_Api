@@ -3,7 +3,7 @@
     public enum ERole
     {
         Admin = 1,
-        Customer = 3,
-        Dealer = 2
+        Dealer = 2,
+        Customer = 3
     }
 }

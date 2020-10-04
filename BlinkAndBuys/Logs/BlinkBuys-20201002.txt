@@ -3226,3 +3226,557 @@ FROM [ProductImage] AS [p]" (0723d8ff)
 2020-10-02T13:47:21.3989962+05:30 0HM36IN3KP6R7:00000002 [INF] Request finished in 486.4013ms 200 application/json; charset=utf-8 (791a596a)
 2020-10-02T13:47:21.4663988+05:30 0HM36IN3KP6R6:00000003 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 587.4406ms (afa2e885)
 2020-10-02T13:47:21.4749698+05:30 0HM36IN3KP6R6:00000003 [INF] Request finished in 607.679ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:22.5887395+05:30 0HM36LV3M9JVU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-10-02T14:17:22.5887395+05:30 0HM36LV3M9JVV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list   (ca22a1cb)
+2020-10-02T14:17:22.5887395+05:30 0HM36LV3M9K00:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:17:22.7422974+05:30 0HM36LV3M9JVU:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:22.7422972+05:30 0HM36LV3M9K00:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:22.7422982+05:30 0HM36LV3M9JVV:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:24.5391437+05:30 0HM36LV3M9K00:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:24.5391388+05:30 0HM36LV3M9JVV:00000001 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:24.5391388+05:30 0HM36LV3M9JVU:00000001 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:24.5432968+05:30 0HM36LV3M9JVU:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:24.5432969+05:30 0HM36LV3M9K00:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:24.5433722+05:30 0HM36LV3M9JVV:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:24.5551489+05:30 0HM36LV3M9JVU:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:24.5780076+05:30 0HM36LV3M9JVV:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:24.5780036+05:30 0HM36LV3M9K00:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:24.6573566+05:30 0HM36LV3M9K00:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:17:24.6577755+05:30 0HM36LV3M9JVV:00000001 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:17:25.0696272+05:30 0HM36LV3M9JVU:00000001 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2020-10-02T14:17:25.3123647+05:30 0HM36LV3M9K00:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:25.3123636+05:30 0HM36LV3M9JVV:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:25.3123640+05:30 0HM36LV3M9JVU:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:26.8028673+05:30 0HM36LV3M9K00:00000001 [INF] Executed DbCommand ("133"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:17:26.8159401+05:30 0HM36LV3M9JVV:00000001 [INF] Executed DbCommand ("154"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:17:26.8476828+05:30 0HM36LV3M9JVU:00000001 [INF] Executed DbCommand ("186"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-10-02T14:17:26.9800069+05:30 0HM36LV3M9JVV:00000001 [INF] Fetching product images for product id: 2 (9e1cf9c3)
+2020-10-02T14:17:26.9809943+05:30 0HM36LV3M9JVV:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:17:26.9831466+05:30 0HM36LV3M9K00:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2400.2335ms. (50a9e262)
+2020-10-02T14:17:26.9831449+05:30 0HM36LV3M9JVU:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2423.0331ms. (50a9e262)
+2020-10-02T14:17:27.0912946+05:30 0HM36LV3M9K00:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:27.0913027+05:30 0HM36LV3M9JVU:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:27.3836146+05:30 0HM36LV3M9JVV:00000001 [INF] Executed DbCommand ("387"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:17:27.6762418+05:30 0HM36LV3M9K00:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 3109.7714ms (afa2e885)
+2020-10-02T14:17:27.6762400+05:30 0HM36LV3M9JVU:00000001 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 3109.872ms (afa2e885)
+2020-10-02T14:17:27.6848111+05:30 0HM36LV3M9JVU:00000001 [INF] Request finished in 5104.0241ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:27.6848141+05:30 0HM36LV3M9K00:00000001 [INF] Request finished in 5104.0556ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:29.6317464+05:30 0HM36LV3M9JVV:00000001 [INF] Fetching product images for product id: 3 (9e1cf9c3)
+2020-10-02T14:17:29.6318606+05:30 0HM36LV3M9JVV:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:17:29.6329113+05:30 0HM36LV3M9JVV:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:17:29.7156130+05:30 0HM36LV3M9JVV:00000001 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:17:29.7156489+05:30 0HM36LV3M9JVV:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:17:29.7162763+05:30 0HM36LV3M9JVV:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:17:29.7870328+05:30 0HM36LV3M9JVV:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5208.744ms. (50a9e262)
+2020-10-02T14:17:29.7873871+05:30 0HM36LV3M9JVV:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:29.9539441+05:30 0HM36LV3M9JVV:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 5413.772ms (afa2e885)
+2020-10-02T14:17:29.9544097+05:30 0HM36LV3M9JVV:00000001 [INF] Request finished in 7373.9888ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:44.9259171+05:30 0HM36LV3M9K00:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:17:44.9261235+05:30 0HM36LV3M9K00:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:44.9307567+05:30 0HM36LV3M9K00:00000002 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:44.9308328+05:30 0HM36LV3M9K00:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:44.9309734+05:30 0HM36LV3M9K00:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:44.9363719+05:30 0HM36LV3M9K00:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:45.3946119+05:30 0HM36LV3M9K00:00000002 [INF] Executed DbCommand ("451"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:17:45.4089715+05:30 0HM36LV3M9K00:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 477.8518ms. (50a9e262)
+2020-10-02T14:17:45.4092207+05:30 0HM36LV3M9K00:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:45.4123996+05:30 0HM36LV3M9K00:00000002 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 481.5669ms (afa2e885)
+2020-10-02T14:17:45.4125240+05:30 0HM36LV3M9K00:00000002 [INF] Request finished in 486.6337ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:48.1167363+05:30 0HM36LV3M9JVU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:17:48.1169585+05:30 0HM36LV3M9JVU:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:48.1181674+05:30 0HM36LV3M9JVU:00000002 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:48.1182853+05:30 0HM36LV3M9JVU:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:48.1184096+05:30 0HM36LV3M9JVU:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:48.1190983+05:30 0HM36LV3M9JVU:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:48.1204747+05:30 0HM36LV3M9JVU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:17:48.1209297+05:30 0HM36LV3M9JVU:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.4373ms. (50a9e262)
+2020-10-02T14:17:48.1210955+05:30 0HM36LV3M9JVU:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:48.1212455+05:30 0HM36LV3M9JVU:00000002 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 3.0019ms (afa2e885)
+2020-10-02T14:17:48.1213418+05:30 0HM36LV3M9JVU:00000002 [INF] Request finished in 4.6721ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:51.6745241+05:30 0HM36LV3M9JVV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:17:51.6746574+05:30 0HM36LV3M9JVV:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:51.6750438+05:30 0HM36LV3M9JVV:00000002 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:51.6751389+05:30 0HM36LV3M9JVV:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:51.6752363+05:30 0HM36LV3M9JVV:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:51.6756772+05:30 0HM36LV3M9JVV:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:51.6764797+05:30 0HM36LV3M9JVV:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:17:51.6768711+05:30 0HM36LV3M9JVV:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.5749ms. (50a9e262)
+2020-10-02T14:17:51.6769656+05:30 0HM36LV3M9JVV:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:51.6771793+05:30 0HM36LV3M9JVV:00000002 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 2.0636ms (afa2e885)
+2020-10-02T14:17:51.6772866+05:30 0HM36LV3M9JVV:00000002 [INF] Request finished in 2.8056ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:52.5089241+05:30 0HM36LV3M9K00:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:17:52.5090295+05:30 0HM36LV3M9K00:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:52.5093542+05:30 0HM36LV3M9K00:00000003 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:52.5094055+05:30 0HM36LV3M9K00:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:52.5095423+05:30 0HM36LV3M9K00:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:52.5099382+05:30 0HM36LV3M9K00:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:52.5107169+05:30 0HM36LV3M9K00:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:17:52.5110342+05:30 0HM36LV3M9K00:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.4386ms. (50a9e262)
+2020-10-02T14:17:52.5111700+05:30 0HM36LV3M9K00:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:52.5114151+05:30 0HM36LV3M9K00:00000003 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 1.9975ms (afa2e885)
+2020-10-02T14:17:52.5115481+05:30 0HM36LV3M9K00:00000003 [INF] Request finished in 2.6587ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:17:53.8022733+05:30 0HM36LV3M9JVU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:17:53.8023519+05:30 0HM36LV3M9JVU:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:53.8026957+05:30 0HM36LV3M9JVU:00000003 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:17:53.8027622+05:30 0HM36LV3M9JVU:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:17:53.8028547+05:30 0HM36LV3M9JVU:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:17:53.8032288+05:30 0HM36LV3M9JVU:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:17:53.8039495+05:30 0HM36LV3M9JVU:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:17:53.8044372+05:30 0HM36LV3M9JVU:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.4787ms. (50a9e262)
+2020-10-02T14:17:53.8045208+05:30 0HM36LV3M9JVU:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:17:53.8047142+05:30 0HM36LV3M9JVU:00000003 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 1.9533ms (afa2e885)
+2020-10-02T14:17:53.8048220+05:30 0HM36LV3M9JVU:00000003 [INF] Request finished in 2.5736ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:24:52.1527118+05:30 0HM36LV3M9K01:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-10-02T14:24:52.1529270+05:30 0HM36LV3M9K01:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1552557+05:30 0HM36LV3M9K02:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list   (ca22a1cb)
+2020-10-02T14:24:52.1554074+05:30 0HM36LV3M9K02:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1608674+05:30 0HM36LV3M9K03:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:24:52.1614455+05:30 0HM36LV3M9K03:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1659007+05:30 0HM36LV3M9K02:00000001 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:24:52.1659955+05:30 0HM36LV3M9K02:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1671812+05:30 0HM36LV3M9K01:00000001 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:24:52.1674852+05:30 0HM36LV3M9K01:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1678574+05:30 0HM36LV3M9K01:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:24:52.1683095+05:30 0HM36LV3M9K02:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:24:52.1684186+05:30 0HM36LV3M9K02:00000001 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:24:52.1688915+05:30 0HM36LV3M9K02:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:24:52.1688916+05:30 0HM36LV3M9K01:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:24:52.1751402+05:30 0HM36LV3M9K03:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:24:52.1752433+05:30 0HM36LV3M9K03:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:24:52.1754872+05:30 0HM36LV3M9K03:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:24:52.1755986+05:30 0HM36LV3M9K03:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:24:52.1759424+05:30 0HM36LV3M9K03:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:24:52.2169380+05:30 0HM36LV3M9K01:00000001 [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-10-02T14:24:52.2176888+05:30 0HM36LV3M9K01:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 49.7085ms. (50a9e262)
+2020-10-02T14:24:52.2179117+05:30 0HM36LV3M9K01:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:24:52.2184489+05:30 0HM36LV3M9K01:00000001 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 50.8861ms (afa2e885)
+2020-10-02T14:24:52.2186656+05:30 0HM36LV3M9K01:00000001 [INF] Request finished in 66.0442ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:24:52.3036878+05:30 0HM36LV3M9K02:00000001 [INF] Executed DbCommand ("120"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:24:52.3052165+05:30 0HM36LV3M9K02:00000001 [INF] Fetching product images for product id: 2 (9e1cf9c3)
+2020-10-02T14:24:52.3055563+05:30 0HM36LV3M9K02:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:24:52.3692263+05:30 0HM36LV3M9K03:00000001 [INF] Executed DbCommand ("181"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:24:52.3705898+05:30 0HM36LV3M9K03:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 194.8922ms. (50a9e262)
+2020-10-02T14:24:52.3711189+05:30 0HM36LV3M9K03:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:24:52.3719313+05:30 0HM36LV3M9K03:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 196.5774ms (afa2e885)
+2020-10-02T14:24:52.3725439+05:30 0HM36LV3M9K03:00000001 [INF] Request finished in 211.6714ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:24:52.3854273+05:30 0HM36LV3M9K02:00000001 [INF] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:24:57.1709462+05:30 0HM36LV3M9K02:00000001 [INF] Fetching product images for product id: 3 (9e1cf9c3)
+2020-10-02T14:24:57.1711995+05:30 0HM36LV3M9K02:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:24:57.1727707+05:30 0HM36LV3M9K02:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:24:57.2934152+05:30 0HM36LV3M9K02:00000001 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:24:57.2934870+05:30 0HM36LV3M9K02:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:24:57.2945225+05:30 0HM36LV3M9K02:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:24:57.3747555+05:30 0HM36LV3M9K02:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5206.3556ms. (50a9e262)
+2020-10-02T14:24:57.3748970+05:30 0HM36LV3M9K02:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:24:57.6896258+05:30 0HM36LV3M9K02:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 5523.6136ms (afa2e885)
+2020-10-02T14:24:57.6898176+05:30 0HM36LV3M9K02:00000001 [INF] Request finished in 5534.6109ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:40:17.1804097+05:30 0HM36MBT7KHB8:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:56075/  0 (ca22a1cb)
+2020-10-02T14:40:17.1804097+05:30 0HM36MBT7KHB7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-10-02T14:40:17.1804097+05:30 0HM36MBT7KHBA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:40:17.1804191+05:30 0HM36MBT7KHB6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list   (ca22a1cb)
+2020-10-02T14:40:17.1804097+05:30 0HM36MBT7KHB9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/values   (ca22a1cb)
+2020-10-02T14:40:17.3875261+05:30 0HM36MBT7KHB6:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:17.3911065+05:30 0HM36MBT7KHB7:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:17.3930723+05:30 0HM36MBT7KHBA:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:17.4106799+05:30 0HM36MBT7KHB8:00000001 [INF] Request finished in 243.2426ms 200  (791a596a)
+2020-10-02T14:40:19.9966418+05:30 0HM36MBT7KHB7:00000001 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:40:19.9966502+05:30 0HM36MBT7KHB9:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "BlinkAndBuys.Controllers.ValuesController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:40:20.0155976+05:30 0HM36MBT7KHBA:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:40:20.0192807+05:30 0HM36MBT7KHB7:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:20.0228148+05:30 0HM36MBT7KHB6:00000001 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:40:20.0250695+05:30 0HM36MBT7KHBA:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:20.0290947+05:30 0HM36MBT7KHB6:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:40:20.0570214+05:30 0HM36MBT7KHB9:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:40:20.0570486+05:30 0HM36MBT7KHB7:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:40:20.0728473+05:30 0HM36MBT7KHB9:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.6926ms. (50a9e262)
+2020-10-02T14:40:20.0860880+05:30 0HM36MBT7KHB6:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:40:20.0882216+05:30 0HM36MBT7KHBA:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:40:20.1089748+05:30 0HM36MBT7KHB6:00000001 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:40:20.1089749+05:30 0HM36MBT7KHBA:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:40:20.1185910+05:30 0HM36MBT7KHB9:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-10-02T14:40:20.4877895+05:30 0HM36MBT7KHB9:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ValuesController.Get (BlinkAndBuys)" in 474.8731ms (afa2e885)
+2020-10-02T14:40:20.5053845+05:30 0HM36MBT7KHB9:00000001 [INF] Request finished in 3350.1023ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:40:20.6870288+05:30 0HM36MBT7KHB7:00000001 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2020-10-02T14:40:21.1248235+05:30 0HM36MBT7KHB8:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/favicon.ico   (ca22a1cb)
+2020-10-02T14:40:21.1484395+05:30 0HM36MBT7KHB8:00000002 [INF] Request finished in 20.6329ms 404  (791a596a)
+2020-10-02T14:40:21.1934376+05:30 0HM36MBT7KHBA:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:40:21.1948185+05:30 0HM36MBT7KHB7:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:40:21.2001437+05:30 0HM36MBT7KHB6:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:40:22.6886956+05:30 0HM36MBT7KHB7:00000001 [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-10-02T14:40:22.6887067+05:30 0HM36MBT7KHB6:00000001 [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:40:22.6887206+05:30 0HM36MBT7KHBA:00000001 [INF] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:40:22.9607000+05:30 0HM36MBT7KHB7:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2896.1237ms. (50a9e262)
+2020-10-02T14:40:22.9946102+05:30 0HM36MBT7KHBA:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2864.9058ms. (50a9e262)
+2020-10-02T14:40:22.9993638+05:30 0HM36MBT7KHB6:00000001 [INF] Fetching product images for product id: 2 (9e1cf9c3)
+2020-10-02T14:40:23.0041229+05:30 0HM36MBT7KHB7:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:40:23.0081280+05:30 0HM36MBT7KHBA:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:40:23.0132035+05:30 0HM36MBT7KHB6:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:40:23.0469700+05:30 0HM36MBT7KHB6:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:40:23.0580703+05:30 0HM36MBT7KHBA:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 3038.7107ms (afa2e885)
+2020-10-02T14:40:23.0593920+05:30 0HM36MBT7KHB7:00000001 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 3056.8069ms (afa2e885)
+2020-10-02T14:40:23.0745041+05:30 0HM36MBT7KHB7:00000001 [INF] Request finished in 5919.6527ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:40:23.0760047+05:30 0HM36MBT7KHBA:00000001 [INF] Request finished in 5919.7088ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:40:23.4918910+05:30 0HM36MBT7KHB6:00000001 [INF] Fetching product images for product id: 3 (9e1cf9c3)
+2020-10-02T14:40:23.4947348+05:30 0HM36MBT7KHB6:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:40:23.4989776+05:30 0HM36MBT7KHB6:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:40:23.6330175+05:30 0HM36MBT7KHB6:00000001 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:40:23.6357988+05:30 0HM36MBT7KHB6:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:40:23.6417259+05:30 0HM36MBT7KHB6:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:40:24.0447849+05:30 0HM36MBT7KHB6:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3745.3301ms. (50a9e262)
+2020-10-02T14:40:24.0588835+05:30 0HM36MBT7KHB6:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:40:24.2918179+05:30 0HM36MBT7KHB6:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 4264.511ms (afa2e885)
+2020-10-02T14:40:24.2955313+05:30 0HM36MBT7KHB6:00000001 [INF] Request finished in 7142.0829ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:41:19.5768468+05:30 0HM36MBT7KHB9:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44378/api/account/signIn   (ca22a1cb)
+2020-10-02T14:41:19.5849033+05:30 0HM36MBT7KHB9:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:41:19.5929504+05:30 0HM36MBT7KHB9:00000002 [INF] Request finished in 14.8429ms 204  (791a596a)
+2020-10-02T14:41:19.6645274+05:30 0HM36MBT7KHB8:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44378/api/account/signIn application/json 339 (ca22a1cb)
+2020-10-02T14:41:19.6680037+05:30 0HM36MBT7KHB8:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:41:19.6797963+05:30 0HM36MBT7KHB8:00000003 [INF] Route matched with "{action = \"SignIn\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Core.AccountModel)" on controller "GroceryStore.Controllers.AccountController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:41:19.6825804+05:30 0HM36MBT7KHB8:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:41:19.8857768+05:30 0HM36MBT7KHB8:00000003 [INF] Executing action method "GroceryStore.Controllers.AccountController.SignIn (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:41:47.3357741+05:30 0HM36MBT7KHB8:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:41:48.5129596+05:30 0HM36MBT7KHB8:00000003 [INF] Executed DbCommand ("370"ms) [Parameters=["@__ToLower_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccountHolderName], [x].[AccountNumber], [x].[Address], [x].[CancelledChequePath], [x].[CompanyName], [x].[ContactNumber], [x].[CreatedDt], [x].[Email], [x].[GstNumber], [x].[IdProofPath], [x].[IfscCode], [x].[IsAccountVerified], [x].[IsActive], [x].[IsDeleted], [x].[IsGstAvailable], [x].[IsNumberVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Name], [x].[Password], [x].[ProductCategoryId], [x].[RoleId], [x].[StreetAddress], [x].[ZipCode]
+FROM [Account] AS [x]
+WHERE LOWER([x].[Email]) = @__ToLower_0" (0723d8ff)
+2020-10-02T14:41:49.5380356+05:30 0HM36MBT7KHB8:00000003 [INF] Executed DbCommand ("119"ms) [Parameters=["@__ToLower_0='?' (Size = 4000), @__account_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccountHolderName], [x].[AccountNumber], [x].[Address], [x].[CancelledChequePath], [x].[CompanyName], [x].[ContactNumber], [x].[CreatedDt], [x].[Email], [x].[GstNumber], [x].[IdProofPath], [x].[IfscCode], [x].[IsAccountVerified], [x].[IsActive], [x].[IsDeleted], [x].[IsGstAvailable], [x].[IsNumberVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Name], [x].[Password], [x].[ProductCategoryId], [x].[RoleId], [x].[StreetAddress], [x].[ZipCode]
+FROM [Account] AS [x]
+WHERE (LOWER([x].[Email]) = @__ToLower_0) AND ([x].[Password] = @__account_Password_1)" (0723d8ff)
+2020-10-02T14:41:52.8299207+05:30 0HM36MBT7KHB8:00000003 [INF] Executed DbCommand ("1,625"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [LoginToken] ([CreatedDt], [Token], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [LoginToken]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2020-10-02T14:41:53.1050184+05:30 0HM36MBT7KHB8:00000003 [INF] Executed action method "GroceryStore.Controllers.AccountController.SignIn (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 33215.2478ms. (50a9e262)
+2020-10-02T14:41:53.1095731+05:30 0HM36MBT7KHB8:00000003 [INF] Executing ObjectResult, writing value of type '"Core.AccountModel"'. (8a1b66c8)
+2020-10-02T14:41:53.1270366+05:30 0HM36MBT7KHB8:00000003 [INF] Executed action "GroceryStore.Controllers.AccountController.SignIn (BlinkAndBuys)" in 33443.9823ms (afa2e885)
+2020-10-02T14:41:53.1308234+05:30 0HM36MBT7KHB8:00000003 [INF] Request finished in 33467.0555ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:42:36.4936300+05:30 0HM36MBT7KHB8:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-10-02T14:42:36.5204793+05:30 0HM36MBT7KHB8:00000004 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:42:36.5269772+05:30 0HM36MBT7KHBB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:42:36.5320332+05:30 0HM36MBT7KHBB:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:42:36.5402548+05:30 0HM36MBT7KHB8:00000004 [INF] Route matched with "{action = \"GetUsers\", controller = \"Shared\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers()" on controller "BlinkAndBuys.Controllers.SharedController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:42:36.5437617+05:30 0HM36MBT7KHB8:00000004 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:42:36.5479577+05:30 0HM36MBT7KHB8:00000004 [INF] Executing action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:42:36.5521168+05:30 0HM36MBT7KHBB:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:42:36.5553092+05:30 0HM36MBT7KHBB:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:42:36.5588662+05:30 0HM36MBT7KHBB:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:42:36.5620755+05:30 0HM36MBT7KHBB:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:42:36.5662181+05:30 0HM36MBT7KHBB:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:42:36.5833806+05:30 0HM36MBT7KHBB:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:42:36.7004882+05:30 0HM36MBT7KHB8:00000004 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:42:36.7057658+05:30 0HM36MBT7KHBB:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 26.6377ms. (50a9e262)
+2020-10-02T14:42:36.7173063+05:30 0HM36MBT7KHBB:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:42:36.7323571+05:30 0HM36MBT7KHBB:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 165.6988ms (afa2e885)
+2020-10-02T14:42:36.7598159+05:30 0HM36MBT7KHBB:00000001 [INF] Request finished in 212.8065ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:42:36.8188031+05:30 0HM36MBT7KHB8:00000004 [INF] Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccountHolderName], [a].[AccountNumber], [a].[Address], [a].[CancelledChequePath], [a].[CompanyName], [a].[ContactNumber], [a].[CreatedDt], [a].[Email], [a].[GstNumber], [a].[IdProofPath], [a].[IfscCode], [a].[IsAccountVerified], [a].[IsActive], [a].[IsDeleted], [a].[IsGstAvailable], [a].[IsNumberVerified], [a].[ModifiedBy], [a].[ModifiedDt], [a].[Name], [a].[Password], [a].[ProductCategoryId], [a].[RoleId], [a].[StreetAddress], [a].[ZipCode]
+FROM [Account] AS [a]" (0723d8ff)
+2020-10-02T14:42:38.0448397+05:30 0HM36MBT7KHB8:00000004 [INF] Executed action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1493.0527ms. (50a9e262)
+2020-10-02T14:42:38.0545178+05:30 0HM36MBT7KHB8:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.AccountModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:42:38.0830926+05:30 0HM36MBT7KHB8:00000004 [INF] Executed action "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" in 1536.6966ms (afa2e885)
+2020-10-02T14:42:38.0905206+05:30 0HM36MBT7KHB8:00000004 [INF] Request finished in 1594.8068ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:43:37.4544392+05:30 0HM36MBT7KHB8:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/dealer/verify/2   (ca22a1cb)
+2020-10-02T14:43:37.4587316+05:30 0HM36MBT7KHB8:00000005 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:43:37.4715160+05:30 0HM36MBT7KHB8:00000005 [INF] Route matched with "{action = \"VerifyDealer\", controller = \"Dealer\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyDealer(Int32)" on controller "BlinkAndBuys.Controllers.DealerController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:43:37.4764019+05:30 0HM36MBT7KHB8:00000005 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:43:37.4906021+05:30 0HM36MBT7KHB8:00000005 [INF] Executing action method "BlinkAndBuys.Controllers.DealerController.VerifyDealer (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:43:41.1953712+05:30 0HM36MBT7KHB8:00000005 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:43:41.2854247+05:30 0HM36MBT7KHB8:00000005 [INF] Executed DbCommand ("46"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccountHolderName], [x].[AccountNumber], [x].[Address], [x].[CancelledChequePath], [x].[CompanyName], [x].[ContactNumber], [x].[CreatedDt], [x].[Email], [x].[GstNumber], [x].[IdProofPath], [x].[IfscCode], [x].[IsAccountVerified], [x].[IsActive], [x].[IsDeleted], [x].[IsGstAvailable], [x].[IsNumberVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Name], [x].[Password], [x].[ProductCategoryId], [x].[RoleId], [x].[StreetAddress], [x].[ZipCode]
+FROM [Account] AS [x]
+WHERE [x].[Id] = @__userId_0" (0723d8ff)
+2020-10-02T14:43:42.6123774+05:30 0HM36MBT7KHB8:00000005 [INF] Executed DbCommand ("993"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = -1), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Int32), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Account] SET [AccountHolderName] = @p0, [AccountNumber] = @p1, [Address] = @p2, [CancelledChequePath] = @p3, [CompanyName] = @p4, [ContactNumber] = @p5, [CreatedDt] = @p6, [Email] = @p7, [GstNumber] = @p8, [IdProofPath] = @p9, [IfscCode] = @p10, [IsAccountVerified] = @p11, [IsActive] = @p12, [IsDeleted] = @p13, [IsGstAvailable] = @p14, [IsNumberVerified] = @p15, [ModifiedBy] = @p16, [ModifiedDt] = @p17, [Name] = @p18, [Password] = @p19, [ProductCategoryId] = @p20, [RoleId] = @p21, [StreetAddress] = @p22, [ZipCode] = @p23
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2020-10-02T14:43:45.9956496+05:30 0HM36MBT7KHB8:00000005 [INF] Executed action method "BlinkAndBuys.Controllers.DealerController.VerifyDealer (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8485.8092ms. (50a9e262)
+2020-10-02T14:43:46.0017751+05:30 0HM36MBT7KHB8:00000005 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2020-10-02T14:43:46.0108300+05:30 0HM36MBT7KHB8:00000005 [INF] Executed action "BlinkAndBuys.Controllers.DealerController.VerifyDealer (BlinkAndBuys)" in 8530.7688ms (afa2e885)
+2020-10-02T14:43:46.0175245+05:30 0HM36MBT7KHB8:00000005 [INF] Request finished in 8568.3286ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:43:46.0414334+05:30 0HM36MBT7KHB8:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/shared/listUsers   (ca22a1cb)
+2020-10-02T14:43:46.0465848+05:30 0HM36MBT7KHB8:00000006 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:43:46.0542887+05:30 0HM36MBT7KHB8:00000006 [INF] Route matched with "{action = \"GetUsers\", controller = \"Shared\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers()" on controller "BlinkAndBuys.Controllers.SharedController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:43:46.0596600+05:30 0HM36MBT7KHB8:00000006 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:43:46.0632900+05:30 0HM36MBT7KHB8:00000006 [INF] Executing action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:43:46.0670580+05:30 0HM36MBT7KHB8:00000006 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:43:46.0754431+05:30 0HM36MBT7KHB8:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccountHolderName], [a].[AccountNumber], [a].[Address], [a].[CancelledChequePath], [a].[CompanyName], [a].[ContactNumber], [a].[CreatedDt], [a].[Email], [a].[GstNumber], [a].[IdProofPath], [a].[IfscCode], [a].[IsAccountVerified], [a].[IsActive], [a].[IsDeleted], [a].[IsGstAvailable], [a].[IsNumberVerified], [a].[ModifiedBy], [a].[ModifiedDt], [a].[Name], [a].[Password], [a].[ProductCategoryId], [a].[RoleId], [a].[StreetAddress], [a].[ZipCode]
+FROM [Account] AS [a]" (0723d8ff)
+2020-10-02T14:43:46.4201250+05:30 0HM36MBT7KHB8:00000006 [INF] Executed action method "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 352.9811ms. (50a9e262)
+2020-10-02T14:43:46.4312740+05:30 0HM36MBT7KHB8:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.AccountModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:43:46.4688398+05:30 0HM36MBT7KHB8:00000006 [INF] Executed action "BlinkAndBuys.Controllers.SharedController.GetUsers (BlinkAndBuys)" in 392.9299ms (afa2e885)
+2020-10-02T14:43:46.4790303+05:30 0HM36MBT7KHB8:00000006 [INF] Request finished in 434.5456ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:44:41.5959032+05:30 0HM36MBT7KHB8:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:44:41.6074847+05:30 0HM36MBT7KHB8:00000007 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:44:41.6129687+05:30 0HM36MBT7KHB8:00000007 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:44:41.6224796+05:30 0HM36MBT7KHBC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list   (ca22a1cb)
+2020-10-02T14:44:41.6226112+05:30 0HM36MBT7KHB8:00000007 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:44:41.6272728+05:30 0HM36MBT7KHBC:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:44:41.6778077+05:30 0HM36MBT7KHB8:00000007 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:44:41.6821815+05:30 0HM36MBT7KHBC:00000001 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:44:41.6844847+05:30 0HM36MBT7KHB8:00000007 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:44:41.9289936+05:30 0HM36MBT7KHBC:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:44:41.9394005+05:30 0HM36MBT7KHB8:00000007 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:44:41.9448982+05:30 0HM36MBT7KHBC:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:44:41.9549158+05:30 0HM36MBT7KHBC:00000001 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:44:41.9614145+05:30 0HM36MBT7KHBC:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:44:42.1218958+05:30 0HM36MBT7KHB8:00000007 [INF] Executed DbCommand ("172"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:44:42.1246723+05:30 0HM36MBT7KHBC:00000001 [INF] Executed DbCommand ("154"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:44:42.1334757+05:30 0HM36MBT7KHB8:00000007 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 445.9153ms. (50a9e262)
+2020-10-02T14:44:42.1384338+05:30 0HM36MBT7KHBC:00000001 [INF] Fetching product images for product id: 2 (9e1cf9c3)
+2020-10-02T14:44:42.1425235+05:30 0HM36MBT7KHB8:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:44:42.1467965+05:30 0HM36MBT7KHBC:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:44:42.3737529+05:30 0HM36MBT7KHB8:00000007 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 531.4485ms (afa2e885)
+2020-10-02T14:44:42.3867711+05:30 0HM36MBT7KHB8:00000007 [INF] Request finished in 789.2616ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:44:42.3893136+05:30 0HM36MBT7KHBC:00000001 [INF] Executed DbCommand ("222"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:44:42.6995396+05:30 0HM36MBT7KHBC:00000001 [INF] Fetching product images for product id: 3 (9e1cf9c3)
+2020-10-02T14:44:42.7061617+05:30 0HM36MBT7KHBC:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:44:42.7109095+05:30 0HM36MBT7KHBC:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:44:42.9125625+05:30 0HM36MBT7KHBC:00000001 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:44:42.9191654+05:30 0HM36MBT7KHBC:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:44:42.9248470+05:30 0HM36MBT7KHBC:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:44:43.2378023+05:30 0HM36MBT7KHBC:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1288.544ms. (50a9e262)
+2020-10-02T14:44:43.2416616+05:30 0HM36MBT7KHBC:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:44:43.6068807+05:30 0HM36MBT7KHBC:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 1913.8146ms (afa2e885)
+2020-10-02T14:44:43.6130257+05:30 0HM36MBT7KHBC:00000001 [INF] Request finished in 1998.5222ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:45:28.4691505+05:30 0HM36MBT7KHB8:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:45:28.4785204+05:30 0HM36MBT7KHB8:00000008 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:45:28.4828571+05:30 0HM36MBT7KHB8:00000008 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:45:28.4858637+05:30 0HM36MBT7KHB8:00000008 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:45:28.4894799+05:30 0HM36MBT7KHB8:00000008 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:45:28.4927886+05:30 0HM36MBT7KHB8:00000008 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:45:28.5005518+05:30 0HM36MBT7KHB8:00000008 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:45:28.5075037+05:30 0HM36MBT7KHB8:00000008 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:45:28.5121430+05:30 0HM36MBT7KHB8:00000008 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 18.9589ms. (50a9e262)
+2020-10-02T14:45:28.5163110+05:30 0HM36MBT7KHB8:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:45:28.5213234+05:30 0HM36MBT7KHB8:00000008 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 34.0258ms (afa2e885)
+2020-10-02T14:45:28.5254195+05:30 0HM36MBT7KHB8:00000008 [INF] Request finished in 55.8352ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:46:48.5648743+05:30 0HM36MBT7KHBD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:46:48.5777530+05:30 0HM36MBT7KHBD:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:46:48.5859941+05:30 0HM36MBT7KHBD:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:46:48.5923831+05:30 0HM36MBT7KHBD:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:46:48.5994790+05:30 0HM36MBT7KHBD:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:46:48.6082290+05:30 0HM36MBT7KHBD:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:46:48.6164409+05:30 0HM36MBT7KHBD:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:46:48.6335459+05:30 0HM36MBT7KHBE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/user   (ca22a1cb)
+2020-10-02T14:46:48.6366456+05:30 0HM36MBT7KHBD:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:46:48.6381063+05:30 0HM36MBT7KHBE:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:46:48.6411743+05:30 0HM36MBT7KHBD:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 38.6655ms. (50a9e262)
+2020-10-02T14:46:48.6446069+05:30 0HM36MBT7KHBD:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:46:48.6497480+05:30 0HM36MBT7KHBD:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 59.0654ms (afa2e885)
+2020-10-02T14:46:48.6568069+05:30 0HM36MBT7KHBD:00000001 [INF] Request finished in 103.1556ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:46:48.6632597+05:30 0HM36MBT7KHBE:00000001 [INF] Route matched with "{action = \"Get\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get()" on controller "BlinkAndBuys.Controllers.UserController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:46:48.6669464+05:30 0HM36MBT7KHBE:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:46:48.6704669+05:30 0HM36MBT7KHBE:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:46:48.6785202+05:30 0HM36MBT7KHBE:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:46:48.7667694+05:30 0HM36MBT7KHBE:00000001 [INF] Executed DbCommand ("65"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccountHolderName], [x].[AccountNumber], [x].[Address], [x].[CancelledChequePath], [x].[CompanyName], [x].[ContactNumber], [x].[CreatedDt], [x].[Email], [x].[GstNumber], [x].[IdProofPath], [x].[IfscCode], [x].[IsAccountVerified], [x].[IsActive], [x].[IsDeleted], [x].[IsGstAvailable], [x].[IsNumberVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Name], [x].[Password], [x].[ProductCategoryId], [x].[RoleId], [x].[StreetAddress], [x].[ZipCode]
+FROM [Account] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2020-10-02T14:46:48.7809636+05:30 0HM36MBT7KHBE:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 100.3794ms. (50a9e262)
+2020-10-02T14:46:48.7913058+05:30 0HM36MBT7KHBE:00000001 [INF] Executing ObjectResult, writing value of type '"Core.AccountModel"'. (8a1b66c8)
+2020-10-02T14:46:48.8043406+05:30 0HM36MBT7KHBE:00000001 [INF] Executed action "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)" in 128.9126ms (afa2e885)
+2020-10-02T14:46:48.8150693+05:30 0HM36MBT7KHBE:00000001 [INF] Request finished in 176.4599ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:47:14.8432804+05:30 0HM36MBT7KHBD:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/states   (ca22a1cb)
+2020-10-02T14:47:14.8862160+05:30 0HM36MBT7KHBD:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:14.9115913+05:30 0HM36MBT7KHBE:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:47:14.9226101+05:30 0HM36MBT7KHBE:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:14.9252157+05:30 0HM36MBT7KHBF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list   (ca22a1cb)
+2020-10-02T14:47:14.9318489+05:30 0HM36MBT7KHBE:00000002 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:47:14.9370291+05:30 0HM36MBT7KHBF:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:14.9405481+05:30 0HM36MBT7KHBE:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:14.9497438+05:30 0HM36MBT7KHBF:00000001 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:47:14.9542755+05:30 0HM36MBT7KHBE:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:47:14.9595185+05:30 0HM36MBT7KHBF:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:14.9633213+05:30 0HM36MBT7KHBE:00000002 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:47:14.9720655+05:30 0HM36MBT7KHBF:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:47:14.9779756+05:30 0HM36MBT7KHBF:00000001 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:47:14.9823269+05:30 0HM36MBT7KHBE:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:47:14.9881769+05:30 0HM36MBT7KHBD:00000002 [INF] Route matched with "{action = \"GetStates\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStates()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:47:14.9899457+05:30 0HM36MBT7KHBF:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:47:14.9947984+05:30 0HM36MBT7KHBD:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:15.0014041+05:30 0HM36MBT7KHBE:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:47:15.0058949+05:30 0HM36MBT7KHBD:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:47:15.0168559+05:30 0HM36MBT7KHBE:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 48.976ms. (50a9e262)
+2020-10-02T14:47:15.0243688+05:30 0HM36MBT7KHBD:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:47:15.0263002+05:30 0HM36MBT7KHBE:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:47:15.0360553+05:30 0HM36MBT7KHBF:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:47:15.0406536+05:30 0HM36MBT7KHBE:00000002 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 96.3913ms (afa2e885)
+2020-10-02T14:47:15.0512582+05:30 0HM36MBT7KHBD:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CountryId], [s].[StateName]
+FROM [State] AS [s]" (0723d8ff)
+2020-10-02T14:47:15.0658987+05:30 0HM36MBT7KHBE:00000002 [INF] Request finished in 154.3693ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:47:15.0716507+05:30 0HM36MBT7KHBF:00000001 [INF] Fetching product images for product id: 2 (9e1cf9c3)
+2020-10-02T14:47:15.0769464+05:30 0HM36MBT7KHBF:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:47:15.0841145+05:30 0HM36MBT7KHBD:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 70.9526ms. (50a9e262)
+2020-10-02T14:47:15.0892597+05:30 0HM36MBT7KHBF:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:47:15.1133119+05:30 0HM36MBT7KHBD:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.StateModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:47:15.1185726+05:30 0HM36MBT7KHBD:00000002 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetStates (BlinkAndBuys)" in 125.5537ms (afa2e885)
+2020-10-02T14:47:15.1238512+05:30 0HM36MBT7KHBD:00000002 [INF] Request finished in 281.5356ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:47:15.3864355+05:30 0HM36MBT7KHBF:00000001 [INF] Fetching product images for product id: 3 (9e1cf9c3)
+2020-10-02T14:47:15.3934955+05:30 0HM36MBT7KHBF:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:47:15.4034588+05:30 0HM36MBT7KHBF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:47:15.5843503+05:30 0HM36MBT7KHBF:00000001 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:47:15.5876467+05:30 0HM36MBT7KHBF:00000001 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:47:15.5928017+05:30 0HM36MBT7KHBF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:47:15.7898649+05:30 0HM36MBT7KHBF:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 812.2866ms. (50a9e262)
+2020-10-02T14:47:15.7976299+05:30 0HM36MBT7KHBF:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:47:15.9692161+05:30 0HM36MBT7KHBF:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 997.969ms (afa2e885)
+2020-10-02T14:47:15.9799029+05:30 0HM36MBT7KHBF:00000001 [INF] Request finished in 1057.2451ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:47:27.7682605+05:30 0HM36MBT7KHBE:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/location/cities   (ca22a1cb)
+2020-10-02T14:47:27.7766402+05:30 0HM36MBT7KHBE:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:27.8061640+05:30 0HM36MBT7KHBE:00000003 [INF] Route matched with "{action = \"GetCities\", controller = \"Location\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCities()" on controller "BlinkAndBuys.Controllers.LocationController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:47:27.8201516+05:30 0HM36MBT7KHBE:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:47:27.8276990+05:30 0HM36MBT7KHBE:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:47:27.8460462+05:30 0HM36MBT7KHBE:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:47:27.8717352+05:30 0HM36MBT7KHBE:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CityName], [c].[StateId]
+FROM [City] AS [c]" (0723d8ff)
+2020-10-02T14:47:27.9054427+05:30 0HM36MBT7KHBE:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 74.5283ms. (50a9e262)
+2020-10-02T14:47:27.9105402+05:30 0HM36MBT7KHBE:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.CityModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:47:27.9210313+05:30 0HM36MBT7KHBE:00000003 [INF] Executed action "BlinkAndBuys.Controllers.LocationController.GetCities (BlinkAndBuys)" in 110.3831ms (afa2e885)
+2020-10-02T14:47:27.9249185+05:30 0HM36MBT7KHBE:00000003 [INF] Request finished in 162.4527ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:48:12.7177091+05:30 0HM36MBT7KHBD:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list/recommended   (ca22a1cb)
+2020-10-02T14:48:12.7214674+05:30 0HM36MBT7KHBD:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:48:12.7285851+05:30 0HM36MBT7KHBD:00000003 [INF] Route matched with "{action = \"GetRecommendedProducts\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecommendedProducts()" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:48:12.7325148+05:30 0HM36MBT7KHBD:00000003 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:48:12.7364436+05:30 0HM36MBT7KHBD:00000003 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetRecommendedProducts (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:48:12.7449703+05:30 0HM36MBT7KHBD:00000003 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:48:12.7491107+05:30 0HM36MBT7KHBD:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:48:12.7574321+05:30 0HM36MBT7KHBD:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[Description], [p].[IsActive], [p].[IsDeleted], [p].[IsVerified], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Note], [p].[Price], [p].[ProductCategoryId], [p].[ProductName], [p].[ProductTitle], [p].[Size], [p].[Specification]
+FROM [Product] AS [p]" (0723d8ff)
+2020-10-02T14:48:12.7711816+05:30 0HM36MBT7KHBD:00000003 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:48:12.7760071+05:30 0HM36MBT7KHBD:00000003 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:48:12.7833525+05:30 0HM36MBT7KHBD:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:48:12.9806939+05:30 0HM36MBT7KHBD:00000003 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetRecommendedProducts (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 239.6497ms. (50a9e262)
+2020-10-02T14:48:12.9851925+05:30 0HM36MBT7KHBD:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:48:13.0497426+05:30 0HM36MBT7KHBD:00000003 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetRecommendedProducts (BlinkAndBuys)" in 317.1211ms (afa2e885)
+2020-10-02T14:48:13.0549302+05:30 0HM36MBT7KHBD:00000003 [INF] Request finished in 335.9222ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:48:13.1572891+05:30 0HM36MBT7KHBF:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/list/4   (ca22a1cb)
+2020-10-02T14:48:13.1609930+05:30 0HM36MBT7KHBF:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:48:13.1653172+05:30 0HM36MBT7KHBF:00000002 [INF] Route matched with "{action = \"GetProductListAsync\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductListAsync(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:48:13.1693991+05:30 0HM36MBT7KHBF:00000002 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:48:13.1759763+05:30 0HM36MBT7KHBF:00000002 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:48:13.1801406+05:30 0HM36MBT7KHBF:00000002 [ERR] Getting product list from db. (0b404217)
+2020-10-02T14:48:13.1899284+05:30 0HM36MBT7KHBF:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:48:13.2308602+05:30 0HM36MBT7KHBF:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[CreatedBy], [x].[CreatedDt], [x].[Description], [x].[IsActive], [x].[IsDeleted], [x].[IsVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Note], [x].[Price], [x].[ProductCategoryId], [x].[ProductName], [x].[ProductTitle], [x].[Size], [x].[Specification]
+FROM [Product] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2020-10-02T14:48:13.2434721+05:30 0HM36MBT7KHBF:00000002 [INF] Fetching product images for product id: 4 (9e1cf9c3)
+2020-10-02T14:48:13.2511432+05:30 0HM36MBT7KHBF:00000002 [ERR] Getting product images from db. (4e58e369)
+2020-10-02T14:48:13.2606963+05:30 0HM36MBT7KHBF:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[CreatedBy], [p].[CreatedDt], [p].[ImagePath], [p].[IsDeleted], [p].[IsPrimaryImage], [p].[ModifiedBy], [p].[ModifiedDt], [p].[Name], [p].[ProductId]
+FROM [ProductImage] AS [p]" (0723d8ff)
+2020-10-02T14:48:13.6656760+05:30 0HM36MBT7KHBF:00000002 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 475.0705ms. (50a9e262)
+2020-10-02T14:48:13.6778004+05:30 0HM36MBT7KHBF:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:48:13.7870192+05:30 0HM36MBT7KHBF:00000002 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductListAsync (BlinkAndBuys)" in 614.8432ms (afa2e885)
+2020-10-02T14:48:13.7992790+05:30 0HM36MBT7KHBF:00000002 [INF] Request finished in 634.5405ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:54:40.6952128+05:30 0HM36MBT7KHBG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/product/category   (ca22a1cb)
+2020-10-02T14:54:40.7059356+05:30 0HM36MBT7KHBG:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:54:40.7555655+05:30 0HM36MBT7KHBH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44378/api/user   (ca22a1cb)
+2020-10-02T14:54:40.8001467+05:30 0HM36MBT7KHBH:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:54:40.8058002+05:30 0HM36MBT7KHBG:00000001 [INF] Route matched with "{action = \"GetProductCategory\", controller = \"Product\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductCategory(System.Nullable`1[System.Int32])" on controller "BlinkAndBuys.Controllers.ProductController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:54:40.8131028+05:30 0HM36MBT7KHBH:00000001 [INF] Route matched with "{action = \"Get\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get()" on controller "BlinkAndBuys.Controllers.UserController" ("BlinkAndBuys"). (122b2fdf)
+2020-10-02T14:54:40.9554041+05:30 0HM36MBT7KHBG:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:54:40.9593558+05:30 0HM36MBT7KHBH:00000001 [INF] Policy execution successful. (0204925d)
+2020-10-02T14:54:40.9625486+05:30 0HM36MBT7KHBG:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:54:40.9662286+05:30 0HM36MBT7KHBH:00000001 [INF] Executing action method "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)" - Validation state: Valid (dad538d7)
+2020-10-02T14:54:41.0517537+05:30 0HM36MBT7KHBG:00000001 [ERR] Getting product categories from db. (61d9063c)
+2020-10-02T14:54:41.1190883+05:30 0HM36MBT7KHBH:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:54:41.1222718+05:30 0HM36MBT7KHBG:00000001 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"BlinkandBuysContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2020-10-02T14:54:41.3811185+05:30 0HM36MBT7KHBH:00000001 [INF] Executed DbCommand ("65"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccountHolderName], [x].[AccountNumber], [x].[Address], [x].[CancelledChequePath], [x].[CompanyName], [x].[ContactNumber], [x].[CreatedDt], [x].[Email], [x].[GstNumber], [x].[IdProofPath], [x].[IfscCode], [x].[IsAccountVerified], [x].[IsActive], [x].[IsDeleted], [x].[IsGstAvailable], [x].[IsNumberVerified], [x].[ModifiedBy], [x].[ModifiedDt], [x].[Name], [x].[Password], [x].[ProductCategoryId], [x].[RoleId], [x].[StreetAddress], [x].[ZipCode]
+FROM [Account] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2020-10-02T14:54:41.3904762+05:30 0HM36MBT7KHBG:00000001 [INF] Executed DbCommand ("205"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [ProductCategory] AS [p]" (0723d8ff)
+2020-10-02T14:54:41.3929619+05:30 0HM36MBT7KHBH:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 416.4902ms. (50a9e262)
+2020-10-02T14:54:41.3983138+05:30 0HM36MBT7KHBH:00000001 [INF] Executing ObjectResult, writing value of type '"Core.AccountModel"'. (8a1b66c8)
+2020-10-02T14:54:41.4284135+05:30 0HM36MBT7KHBG:00000001 [INF] Executed action method "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 434.3873ms. (50a9e262)
+2020-10-02T14:54:41.4538978+05:30 0HM36MBT7KHBG:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.ProductCategoryModel, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-10-02T14:54:41.4649632+05:30 0HM36MBT7KHBH:00000001 [INF] Executed action "BlinkAndBuys.Controllers.UserController.Get (BlinkAndBuys)" in 640.5313ms (afa2e885)
+2020-10-02T14:54:41.4791350+05:30 0HM36MBT7KHBG:00000001 [INF] Executed action "BlinkAndBuys.Controllers.ProductController.GetProductCategory (BlinkAndBuys)" in 649.8591ms (afa2e885)
+2020-10-02T14:54:41.4828958+05:30 0HM36MBT7KHBH:00000001 [INF] Request finished in 754.6605ms 200 application/json; charset=utf-8 (791a596a)
+2020-10-02T14:54:41.4928721+05:30 0HM36MBT7KHBG:00000001 [INF] Request finished in 800.9434ms 200 application/json; charset=utf-8 (791a596a)
