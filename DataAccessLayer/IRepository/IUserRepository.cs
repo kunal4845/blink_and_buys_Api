@@ -13,5 +13,6 @@ namespace DataAccessLayer.IRepository
         Task<Account> ResetPassword(Account account);
         Task<Account> GetUserById(int id);
         Task<List<Account>> GetUsers();
+        Task<bool> UpdatePassword(int userId, string password, string confirmPassword);
     }
 }

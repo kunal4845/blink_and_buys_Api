@@ -162,5 +162,27 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
+        public async Task<bool> UpdatePassword(int userId, string password, string confirmPassword)
+        {
+            try
+            {
+                var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
+                if (user.Password == password)
+                {
+                    user.Password = confirmPassword;
+                    user.ModifiedDt = DateTime.Now;
+                    _dbContext.Account.Update(user);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
     }
 }

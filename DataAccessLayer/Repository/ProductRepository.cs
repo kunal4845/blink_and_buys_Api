@@ -14,8 +14,8 @@ namespace DataAccessLayer.Repository
     {
         #region"CONTEXT"
         private readonly BlinkandBuysContext _dbContext;
-        private readonly ILogger<ProductCategory> _logger;
-        public ProductRepository(BlinkandBuysContext dbContext, ILogger<ProductCategory> logger)
+        private readonly ILogger<Product> _logger;
+        public ProductRepository(BlinkandBuysContext dbContext, ILogger<Product> logger)
         {
             _dbContext = dbContext;
             _logger = logger;
