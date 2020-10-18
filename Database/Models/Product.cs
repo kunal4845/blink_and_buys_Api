@@ -14,6 +14,7 @@ namespace Database.Models
         public decimal Price { get; set; }
         public string Specification { get; set; }
         public string Size { get; set; }
+        public int? Quantity { get; set; }
         public string Note { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlinkAndBuys.Helpers;
 using Core;
 using DataAccessLayer.IRepository;
 using Database.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 
 namespace BlinkAndBuys.Controllers
 {
@@ -20,16 +18,13 @@ namespace BlinkAndBuys.Controllers
         #region Initiate
         private IUserRepository _userService;
         private readonly IMapper _mapper;
-        private IConfiguration _config;
-        private readonly AppSettings _appSettings;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserRepository userService, IMapper mapper, IConfiguration config,
-            IOptions<AppSettings> appSettings)
+        public UserController(IUserRepository userService, IMapper mapper, ILogger<UserController> logger)
         {
             _userService = userService;
             _mapper = mapper;
-            _config = config;
-            _appSettings = appSettings.Value;
+            _logger = logger;
         }
         #endregion
 
@@ -40,7 +35,6 @@ namespace BlinkAndBuys.Controllers
             try
             {
                 var userId = Request.HttpContext.Items["userId"];
-                userId = 1;
                 var user = new Account();
                 if (userId != null)
                 {
@@ -50,6 +44,7 @@ namespace BlinkAndBuys.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
         }

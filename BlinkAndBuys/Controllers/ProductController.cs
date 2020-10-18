@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.Mappers;
 using Core;
 using DataAccessLayer.IRepository;
 using Database.Models;
@@ -74,7 +75,7 @@ namespace BlinkAndBuys.Controllers
             try
             {
                 var files = Request.Form.Files;
-                var folderName = Path.Combine("Resources", "Images");
+                var folderName = Path.Combine("Resources", "ProductImages");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
 
                 _logger.LogInformation("Number of files are: {0}", files.Count);
@@ -218,6 +219,76 @@ namespace BlinkAndBuys.Controllers
                     product.ProductImages = productImages;
                 }
 
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("cart")]
+        public async Task<IActionResult> AddToCart(UserCart userCart)
+        {
+            try
+            {
+                var response = await _productRepository.AddToCart(userCart);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("cart/{userId}")]
+        public async Task<IActionResult> GetCart(int userId)
+        {
+            try
+            {
+                List<UserCartModel> userCarts = new List<UserCartModel>();
+
+                var response = await _productRepository.GetCart(userId);
+                foreach (var item in response)
+                {
+                    var products = await _productRepository.GetProductsAsync(item.ProductId);
+                    var productModels = _mapper.Map<List<Product>, List<ProductModel>>(products);
+
+                    if (productModels.Count > 0)
+                    {
+                        UserCartModel userCart = new UserCartModel()
+                        {
+                            Product = productModels[0],
+                            Id = item.Id,
+                            IsDeleted = item.IsDeleted,
+                            ProductId = item.ProductId,
+                            Quantity = item.Quantity,
+                            UserId = item.UserId,
+                            CreatedDt = item.CreatedDt,
+                        };
+                        userCarts.Add(userCart);
+                    }
+                }
+                return Ok(userCarts);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete]
+        [Route("cart/{cartId}")]
+        public async Task<IActionResult> DeleteCart(int cartId)
+        {
+            try
+            {
+                var response = await _productRepository.DeleteCart(cartId);
                 return Ok(response);
             }
             catch (Exception ex)

@@ -1,6 +1,7 @@
-﻿CREATE TABLE [dbo].[Role] (
-    [Id]   INT           IDENTITY (1, 1) NOT NULL,
-    [Name] VARCHAR (250) NOT NULL,
+﻿CREATE TABLE [dbo].[City] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [StateId]  INT            NOT NULL,
+    [CityName] NVARCHAR (150) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

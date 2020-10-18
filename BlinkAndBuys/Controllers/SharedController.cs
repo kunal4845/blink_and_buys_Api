@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace BlinkAndBuys.Controllers {
+
     [Route("api/[controller]")]
     [EnableCors("CORS")]
     [ApiController]

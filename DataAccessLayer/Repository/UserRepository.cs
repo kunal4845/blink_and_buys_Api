@@ -27,22 +27,35 @@ namespace DataAccessLayer.Repository
         {
             try
             {
+                if (account.RoleId == (int)ERole.Admin)
+                {
+                    account.IsAccountVerified = null;
+                    account.IsNumberVerified = null;
+                }
+
                 if (account.RoleId == (int)ERole.Customer)
                 {
-                    account.IsAccountVerified = true;
-                    account.IsNumberVerified = true;
+                    account.IsAccountVerified = null;
+                    account.IsNumberVerified = null;
                 }
-                else
+
+                if (account.RoleId == (int)ERole.Dealer)
                 {
                     account.IsAccountVerified = false;
+                    account.IsNumberVerified = false;
+                }
+
+                if (account.RoleId == (int)ERole.ServiceProvider)
+                {
+                    account.IsAccountVerified = false;
+                    account.IsNumberVerified = null;
                 }
 
                 account.IsActive = true;
                 account.IsDeleted = false;
                 account.CreatedDt = DateTime.Now;
                 account.ModifiedDt = DateTime.Now;
-                //account.RoleId = (int)ERole.Dealer;
-
+                account.RoleId = account.RoleId;
                 await _dbContext.Account.AddAsync(account);
                 await _dbContext.SaveChangesAsync();
                 return account;
@@ -90,12 +103,12 @@ namespace DataAccessLayer.Repository
             }
         }
 
-        public async Task<Account> CheckEmailExists(string email)
+        public async Task<Account> CheckEmailExists(string email, int roleId)
         {
             try
             {
                 Account user = null;
-                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower());
+                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower() && x.RoleId == roleId);
                 return user;
             }
             catch (Exception ex)

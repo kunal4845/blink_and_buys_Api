@@ -16,20 +16,21 @@ namespace Database.Models
         public string Address { get; set; }
         public string StreetAddress { get; set; }
         public string ZipCode { get; set; }
-        public int ProductCategoryId { get; set; }
+        public int? ProductCategoryId { get; set; }
         public string IsGstAvailable { get; set; }
         public string GstNumber { get; set; }
         public string AccountNumber { get; set; }
         public string AccountHolderName { get; set; }
         public string IfscCode { get; set; }
-        public bool IsNumberVerified { get; set; }
+        public bool? IsNumberVerified { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }
-        public bool IsAccountVerified { get; set; }
+        public bool? IsAccountVerified { get; set; }
         public string IdProofPath { get; set; }
         public string CancelledChequePath { get; set; }
+        public string Image { get; set; }
         public DateTime CreatedDt { get; set; }
         public DateTime ModifiedDt { get; set; }
-        public int ModifiedBy { get; set; }
+        public int? ModifiedBy { get; set; }
     }
 }

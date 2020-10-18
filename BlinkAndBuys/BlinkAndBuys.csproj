@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\ServiceIcons\" />
+    <Folder Include="Resources\ProductImages\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

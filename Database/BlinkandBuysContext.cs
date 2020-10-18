@@ -12,6 +12,9 @@ namespace Grocery.Data
         public DbSet<ProductCategory> ProductCategory { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<ProductImage> ProductImage { get; set; }
+        public DbSet<UserCart> UserCart { get; set; }
+        public DbSet<Service> Service { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         public BlinkandBuysContext(DbContextOptions<BlinkandBuysContext> options) : base(options)
         {

@@ -27,8 +27,10 @@ namespace Core
         public bool IsAccountVerified { get; set; }
         public string IdProofPath { get; set; }
         public string CancelledChequePath { get; set; }
+        public string Image { get; set; }
         public DateTime? CreatedDt { get; set; }
         public string Token { get; set; }
+        public Microsoft.AspNetCore.Http.IFormFile ProfileImage { get; set; }
         public Microsoft.AspNetCore.Http.IFormFile IdProof { get; set; }
         public Microsoft.AspNetCore.Http.IFormFile CancelledCheque { get; set; }
     }

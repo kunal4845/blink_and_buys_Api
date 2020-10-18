@@ -9,7 +9,7 @@
     [Address]             NVARCHAR (MAX) NULL,
     [StreetAddress]       NVARCHAR (MAX) NULL,
     [ZipCode]             NVARCHAR (MAX) NULL,
-    [ProductCategoryId]   INT            NOT NULL,
+    [ProductCategoryId]   INT            NULL,
     [IsGstAvailable]      NVARCHAR (50)  NULL,
     [GstNumber]           NVARCHAR (MAX) NULL,
     [AccountNumber]       NVARCHAR (MAX) NULL,
@@ -18,13 +18,13 @@
     [IsNumberVerified]    BIT            NULL,
     [IsDeleted]           BIT            NOT NULL,
     [IsActive]            BIT            NOT NULL,
-    [IsAccountVerified]   BIT            NOT NULL,
+    [IsAccountVerified]   BIT            NULL,
     [Image]               NVARCHAR (MAX) NULL,
     [IdProofPath]         NVARCHAR (MAX) NULL,
     [CancelledChequePath] NVARCHAR (MAX) NULL,
     [CreatedDt]           DATETIME       NOT NULL,
     [ModifiedBy]          INT            NULL,
-    [ModifiedDt]          DATETIME       NULL,
+    [ModifiedDt]          DATETIME2 (7)  NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

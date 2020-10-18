@@ -47,6 +47,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
         public async Task<int> Upsert(Product product)
         {
             try
@@ -68,6 +69,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
         public async Task<int> UploadProductImage(List<ProductImage> productImage, int productId)
         {
             try
@@ -84,6 +86,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
         public async Task<List<Product>> GetProductsAsync(int? id)
         {
             try
@@ -109,6 +112,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
         public async Task<int> VerifyProduct(Product product)
         {
             try
@@ -124,6 +128,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
+
         public async Task<int> Delete(Product product)
         {
             try
@@ -185,7 +190,76 @@ namespace DataAccessLayer.Repository
             }
         }
 
+        public async Task<UserCart> AddToCart(UserCart userCart)
+        {
+            try
+            {
+                _logger.LogError("adding cart to database.");
+                var carts = await _dbContext.UserCart.ToListAsync();
+                var cart = carts.Where(x => x.ProductId == userCart.ProductId && x.UserId == userCart.UserId && x.IsDeleted == false).FirstOrDefault();
+                if (cart != null)
+                {
+                    cart.IsDeleted = false;
+                    cart.ModifiedDt = DateTime.Now;
+                    cart.ModifiedBy = userCart.UserId;
+                    cart.Quantity = cart.Quantity + 1;
+                    _dbContext.UserCart.Update(cart);
+                }
+                else
+                {
+                    userCart.IsDeleted = false;
+                    userCart.CreatedDt = DateTime.Now;
+                    userCart.CreatedBy = userCart.UserId;
+                    await _dbContext.UserCart.AddAsync(userCart);
+                }
+                await _dbContext.SaveChangesAsync();
+                return userCart;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
 
+        public async Task<List<UserCart>> GetCart(int userId)
+        {
+            try
+            {
+                _logger.LogError("Getting cart values from db.");
+                List<UserCart> products = new List<UserCart>();
+                products = await _dbContext.UserCart.ToListAsync();
+                var res = products.Where(x => x.UserId == userId && x.IsDeleted == false).ToList();
+                return res;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
 
+        public async Task<bool> DeleteCart(int cartId)
+        {
+            try
+            {
+                _logger.LogError("adding cart to database.");
+                var carts = await _dbContext.UserCart.ToListAsync();
+                var cart = carts.Where(x => x.Id == cartId).FirstOrDefault();
+                if (cart != null)
+                {
+                    cart.IsDeleted = true;
+                    cart.ModifiedDt = DateTime.Now;
+                    _dbContext.UserCart.Update(cart);
+                }
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
     }
 }

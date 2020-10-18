@@ -13,7 +13,9 @@ namespace DataAccessLayer.IRepository
         Task<int> VerifyProduct(Product product);
         Task<int> Delete(Product product);
         List<ProductImage> GetProductImages(int? productId);
-
         Task<List<Product>> GetRecommendedProducts();
+        Task<UserCart> AddToCart(UserCart userCart);
+        Task<List<UserCart>> GetCart(int userId);
+        Task<bool> DeleteCart(int cartId);
     }
 }

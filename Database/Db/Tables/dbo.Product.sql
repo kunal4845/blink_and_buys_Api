@@ -7,6 +7,7 @@
     [Price]             DECIMAL (18, 2) NOT NULL,
     [Specification]     NVARCHAR (MAX)  NULL,
     [Size]              NVARCHAR (250)  NULL,
+    [Quantity]          INT             NULL,
     [Note]              NVARCHAR (MAX)  NULL,
     [IsDeleted]         BIT             NOT NULL,
     [IsActive]          BIT             NOT NULL,

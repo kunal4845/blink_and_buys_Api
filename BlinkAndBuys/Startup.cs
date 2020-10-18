@@ -80,7 +80,8 @@ namespace BlinkAndBuys
             services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IDealerRepository, DealerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-
+            services.AddScoped<IServiceRepository, ServiceRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddMvc();
         }
 
