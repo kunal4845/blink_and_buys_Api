@@ -131,5 +131,55 @@ namespace BlinkAndBuys.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet]
+        [Route("booked/{bookedServiceId?}")]
+        public async Task<IActionResult> GetBookedServices(int? bookedServiceId)
+        {
+            try
+            {
+                var services = await _serviceRepository.GetBookedServices(bookedServiceId);
+                return Ok(_mapper.Map<List<BookedService>, List<BookedServiceModel>>(services));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("assignServiceProvider")]
+        public async Task<IActionResult> AssignServiceProvider(BookedServiceModel bookedService)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var service = await _serviceRepository.AssignServiceProvider(bookedService.ServiceProviderId, bookedService.BookedServiceId, Convert.ToInt32(loggedInUser));
+                return Ok(service);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("reject/{bookedServiceId}")]
+        public async Task<IActionResult> RejectService(int bookedServiceId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var service = await _serviceRepository.RejectService(bookedServiceId, Convert.ToInt32(loggedInUser));
+                return Ok(service);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
     }
 }

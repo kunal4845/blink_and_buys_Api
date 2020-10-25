@@ -33,21 +33,21 @@ namespace BlinkAndBuys.Controllers
         }
         #endregion
 
-        [HttpGet]
-        [Route("category/{id?}")]
-        public async Task<IActionResult> GetProductCategory(int? id)
-        {
-            try
-            {
-                var categories = await _productRepository.GetProductCategory(id);
-                return Ok(_mapper.Map<List<ProductCategory>, List<ProductCategoryModel>>(categories));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Following exception has occurred: {0}", ex);
-                return BadRequest();
-            }
-        }
+        //[HttpGet]
+        //[Route("category/{id?}")]
+        //public async Task<IActionResult> GetProductCategory(int? id)
+        //{
+        //    try
+        //    {
+        //        var categories = await _productRepository.GetProductCategory(id);
+        //        return Ok(_mapper.Map<List<ProductCategory>, List<ProductCategoryModel>>(categories));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError("Following exception has occurred: {0}", ex);
+        //        return BadRequest();
+        //    }
+        //}
 
         [HttpPost]
         [Route("")]

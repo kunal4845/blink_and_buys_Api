@@ -11,11 +11,11 @@ namespace Core.Common
             CreateMap<Account, AccountModel>().ReverseMap();
             CreateMap<City, CityModel>().ReverseMap();
             CreateMap<State, StateModel>().ReverseMap();
-            CreateMap<ProductCategory, ProductCategoryModel>().ReverseMap();
             CreateMap<Product, ProductModel>().ReverseMap();
             CreateMap<ProductImage, ProductImageModel>().ReverseMap();
             CreateMap<Service, ServiceModel>().ReverseMap();
             CreateMap<Category, CategoryModel>().ReverseMap();
+            CreateMap<BookedService, BookedServiceModel>().ReverseMap();
         }
     }
 }

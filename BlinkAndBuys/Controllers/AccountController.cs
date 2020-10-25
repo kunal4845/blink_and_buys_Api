@@ -83,11 +83,27 @@ namespace GroceryStore.Controllers
                         }
                     }
                     _logger.LogInformation("Convert images to base64.");
-                    byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.IdProof.FileName);
-                    account.IdProofPath = Convert.ToBase64String(idProofImageArray);
 
-                    byte[] chequeImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.CancelledCheque.FileName);
-                    account.CancelledChequePath = Convert.ToBase64String(chequeImageArray);
+                    if (files.Count > 0)
+                    {
+                        if (files.Where(x => x.Name == "IdProofPath") != null)
+                        {
+                            byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "IdProofPath").FirstOrDefault().FileName);
+                            account.IdProofPath = Convert.ToBase64String(idProofImageArray);
+                        }
+                        if (files.Where(x => x.Name == "Image") != null)
+                        {
+                            byte[] profileImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "Image").FirstOrDefault().FileName);
+                            account.Image = Convert.ToBase64String(profileImageArray);
+                        }
+                    }
+
+
+                    //byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.IdProof.FileName);
+                    //account.IdProofPath = Convert.ToBase64String(idProofImageArray);
+
+                    //byte[] chequeImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + accountModel.CancelledCheque.FileName);
+                    //account.CancelledChequePath = Convert.ToBase64String(chequeImageArray);
 
                     account.Password = Core.Helper.Helpers.EncodePasswordMd5(accountModel.Password);
                     _logger.LogInformation("Inserting record to database.");

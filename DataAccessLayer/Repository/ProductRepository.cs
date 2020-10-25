@@ -22,31 +22,31 @@ namespace DataAccessLayer.Repository
         }
         #endregion
 
-        public async Task<List<ProductCategory>> GetProductCategory(int? id)
-        {
-            try
-            {
-                _logger.LogError("Getting product categories from db.");
+        //public async Task<List<ProductCategory>> GetProductCategory(int? id)
+        //{
+        //    try
+        //    {
+        //        _logger.LogError("Getting product categories from db.");
 
-                List<ProductCategory> categories = new List<ProductCategory>();
-                if (id != null)
-                {
-                    var category = await _dbContext.ProductCategory.FirstOrDefaultAsync(x => x.Id == id);
-                    categories.Add(category);
-                }
-                else
-                {
-                    categories = await _dbContext.ProductCategory.ToListAsync();
-                }
+        //        List<ProductCategory> categories = new List<ProductCategory>();
+        //        if (id != null)
+        //        {
+        //            var category = await _dbContext.ProductCategory.FirstOrDefaultAsync(x => x.Id == id);
+        //            categories.Add(category);
+        //        }
+        //        else
+        //        {
+        //            categories = await _dbContext.ProductCategory.ToListAsync();
+        //        }
 
-                return categories;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Following exception has occurred: {0}", ex);
-                throw ex;
-            }
-        }
+        //        return categories;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError("Following exception has occurred: {0}", ex);
+        //        throw ex;
+        //    }
+        //}
 
         public async Task<int> Upsert(Product product)
         {
