@@ -16,6 +16,7 @@ namespace Core.Common
             CreateMap<Service, ServiceModel>().ReverseMap();
             CreateMap<Category, CategoryModel>().ReverseMap();
             CreateMap<BookedService, BookedServiceModel>().ReverseMap();
+            CreateMap<ServiceProviderAvailability, ServiceProviderAvailabilityModel>().ReverseMap();
         }
     }
 }

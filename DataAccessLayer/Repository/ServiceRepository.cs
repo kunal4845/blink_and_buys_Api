@@ -21,7 +21,6 @@ namespace DataAccessLayer.Repository
             _logger = logger;
         }
         #endregion
-
         public async Task<List<Service>> GetServices(int? serviceId)
         {
             try
@@ -132,31 +131,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
-
-        public async Task<int> AssignServiceProvider(int? serviceProviderId, int bookedServiceId, int loggedInUser)
-        {
-            try
-            {
-                var bookedService = await _dbContext.BookedService.FirstOrDefaultAsync(x => x.BookedServiceId == bookedServiceId);
-                if (bookedService != null)
-                {
-                    _logger.LogInformation("updating BookedService record to database.");
-                    bookedService.ModifiedBy = loggedInUser;
-                    bookedService.ModifiedDt = DateTime.Now;
-                    bookedService.ServiceProviderId = serviceProviderId;
-                    _dbContext.BookedService.Update(bookedService);
-                }
-
-                await _dbContext.SaveChangesAsync();
-                return bookedServiceId;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Following exception has occurred: {0}", ex);
-                throw ex;
-            }
-        }
-
+        
         public async Task<int> RejectService(int bookedServiceId, int loggedInUser)
         {
             try

@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace Database.Models
 {
-    public class Service
+    public class ServiceProviderAvailability
     {
         [Key]
         public int Id { get; set; }
-        public string ServiceName { get; set; }
-        public string Description { get; set; }
-        public string ServiceIcon { get; set; }
+        public int ServiceProviderId { get; set; }
+        public string Timings { get; set; }
+        public string Days { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedDt { get; set; }

@@ -15,6 +15,7 @@ namespace Grocery.Data
         public DbSet<Service> Service { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<BookedService> BookedService { get; set; }
+        public DbSet<ServiceProviderAvailability> ServiceProviderAvailability { get; set; }
 
         public BlinkandBuysContext(DbContextOptions<BlinkandBuysContext> options) : base(options)
         {

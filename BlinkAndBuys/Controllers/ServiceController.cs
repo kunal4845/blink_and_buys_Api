@@ -148,23 +148,6 @@ namespace BlinkAndBuys.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("assignServiceProvider")]
-        public async Task<IActionResult> AssignServiceProvider(BookedServiceModel bookedService)
-        {
-            try
-            {
-                var loggedInUser = Request.HttpContext.Items["userId"];
-                var service = await _serviceRepository.AssignServiceProvider(bookedService.ServiceProviderId, bookedService.BookedServiceId, Convert.ToInt32(loggedInUser));
-                return Ok(service);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Following exception has occurred: {0}", ex);
-                return BadRequest();
-            }
-        }
-
         [HttpGet]
         [Route("reject/{bookedServiceId}")]
         public async Task<IActionResult> RejectService(int bookedServiceId)
