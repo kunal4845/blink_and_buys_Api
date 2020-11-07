@@ -164,5 +164,39 @@ namespace BlinkAndBuys.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet]
+        [Route("rejectedByServiceProvider/{bookedServiceId}")]
+        public async Task<IActionResult> RejectedByServiceProvider(int bookedServiceId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var service = await _serviceRepository.RejectedByServiceProvider(bookedServiceId, Convert.ToInt32(loggedInUser));
+                return Ok(service);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("approvedByServiceProvider/{bookedServiceId}")]
+        public async Task<IActionResult> ApprovedByServiceProvider(int bookedServiceId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var service = await _serviceRepository.ApprovedByServiceProvider(bookedServiceId, Convert.ToInt32(loggedInUser));
+                return Ok(service);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
     }
 }

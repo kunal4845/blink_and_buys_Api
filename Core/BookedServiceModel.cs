@@ -9,8 +9,11 @@ namespace Core
         public int BookedServiceId { get; set; }
         public int? ServiceProviderId { get; set; }
         public int ServiceId { get; set; }
-        public bool IsCancelled { get; set; }
-        public bool IsRejected { get; set; }
+        public bool IsRejectedByAdmin { get; set; }
+        public bool IsApprovedByAdmin { get; set; }
+        public bool IsRejectedByServiceProvider { get; set; }
+        public bool IsApprovedByServiceProvider { get; set; }
+        public bool IsCancelledByUser { get; set; }
         public int UserId { get; set; }
         public int CityId { get; set; }
         public bool IsActive { get; set; }

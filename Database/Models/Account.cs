@@ -13,6 +13,13 @@ namespace Database.Models
         public string Password { get; set; }
         public string CompanyName { get; set; }
         public string ContactNumber { get; set; }
+        public int? ServiceSubCategoryId { get; set; }
+        public int? ServiceId { get; set; }
+        public string Qualification { get; set; }
+        public string Gender { get; set; }
+        public string FatherName { get; set; }
+        public int? CityId { get; set; }
+        public int? StateId { get; set; }
         public string Address { get; set; }
         public string StreetAddress { get; set; }
         public string ZipCode { get; set; }

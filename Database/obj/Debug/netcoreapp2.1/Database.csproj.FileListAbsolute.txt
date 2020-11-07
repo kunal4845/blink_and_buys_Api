@@ -18,4 +18,3 @@ D:\blink_and_buys_Api\Database\obj\Debug\netcoreapp2.1\Database.AssemblyInfo.cs
 D:\blink_and_buys_Api\Database\obj\Debug\netcoreapp2.1\Database.csproj.CoreCompileInputs.cache
 D:\blink_and_buys_Api\Database\obj\Debug\netcoreapp2.1\Database.dll
 D:\blink_and_buys_Api\Database\obj\Debug\netcoreapp2.1\Database.pdb
-D:\blink_and_buys_Api\Database\obj\Debug\netcoreapp2.1\Database.csprojAssemblyReference.cache

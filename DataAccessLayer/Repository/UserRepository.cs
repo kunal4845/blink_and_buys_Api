@@ -108,7 +108,7 @@ namespace DataAccessLayer.Repository
             try
             {
                 Account user = null;
-                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower() && x.RoleId == roleId);
+                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower());
                 return user;
             }
             catch (Exception ex)
@@ -172,6 +172,29 @@ namespace DataAccessLayer.Repository
                 {
                     user.Password = confirmPassword;
                     user.ModifiedDt = DateTime.Now;
+                    _dbContext.Account.Update(user);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<bool> UpdateProfileImage(int userId, string profileImage)
+        {
+            try
+            {
+                var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
+                if (user != null)
+                {
+                    user.ModifiedDt = DateTime.Now;
+                    user.ModifiedBy = userId;
+                    user.Image = profileImage;
                     _dbContext.Account.Update(user);
                     await _dbContext.SaveChangesAsync();
                     return true;

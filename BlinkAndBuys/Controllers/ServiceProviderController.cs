@@ -85,5 +85,59 @@ namespace BlinkAndBuys.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet]
+        [Route("verify/{userId}")]
+        public async Task<IActionResult> VerifyServiceProvider(int userId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _serviceRepository.VerifyServiceProvider(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+
+        }
+
+        [HttpDelete]
+        [Route("{userId}")]
+        public async Task<IActionResult> DeleteServiceProvider(int userId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _serviceRepository.DeleteServiceProvider(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+
+        }
+
+        [HttpGet]
+        [Route("block/{userId}")]
+        public async Task<IActionResult> BlockServiceProvider(int userId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var res = await _serviceRepository.BlockServiceProvider(userId, Convert.ToInt32(loggedInUser));
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+
+        }
     }
 }

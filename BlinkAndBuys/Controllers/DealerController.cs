@@ -20,16 +20,11 @@ namespace BlinkAndBuys.Controllers
     {
         #region Initiate
         private IDealerRepository _dealerRepository;
-        private readonly IMapper _mapper;
-        private readonly SmtpCredentials _smtpCredentials;
         private readonly ILogger<DealerController> _logger;
 
-        public DealerController(IDealerRepository dealerRepository, IMapper mapper, IOptions<SmtpCredentials> smtpCredentials,
-            ILogger<DealerController> logger)
+        public DealerController(IDealerRepository dealerRepository, ILogger<DealerController> logger)
         {
             _dealerRepository = dealerRepository;
-            _mapper = mapper;
-            _smtpCredentials = smtpCredentials.Value;
             _logger = logger;
         }
         #endregion
@@ -49,7 +44,7 @@ namespace BlinkAndBuys.Controllers
                 _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
-           
+
         }
 
         [HttpDelete]
@@ -67,7 +62,7 @@ namespace BlinkAndBuys.Controllers
                 _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
-            
+
         }
 
         [HttpGet]
@@ -85,7 +80,7 @@ namespace BlinkAndBuys.Controllers
                 _logger.LogError("Following exception has occurred: {0}", ex);
                 return BadRequest();
             }
-        
+
         }
     }
 }

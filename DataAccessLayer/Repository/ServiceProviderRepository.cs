@@ -33,6 +33,8 @@ namespace DataAccessLayer.Repository
                     bookedService.ModifiedBy = loggedInUser;
                     bookedService.ModifiedDt = DateTime.Now;
                     bookedService.ServiceProviderId = serviceProviderId;
+                    bookedService.IsRejectedByAdmin = false;
+                    bookedService.IsApprovedByAdmin = true;
                     _dbContext.BookedService.Update(bookedService);
                 }
 
@@ -85,6 +87,79 @@ namespace DataAccessLayer.Repository
 
                 await _dbContext.SaveChangesAsync();
                 return serviceProvider.Id;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+
+        public async Task<bool> VerifyServiceProvider(int userId, int loggedInUser)
+        {
+            try
+            {
+                var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
+                if (user != null)
+                {
+                    user.IsAccountVerified = true;
+                    user.ModifiedDt = DateTime.Now;
+                    user.ModifiedBy = loggedInUser;
+
+                    _dbContext.Account.Update(user);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<bool> DeleteServiceProvider(int userId, int loggedInUser)
+        {
+            try
+            {
+                var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
+                if (user != null)
+                {
+                    user.IsDeleted = true;
+                    user.ModifiedDt = DateTime.Now;
+                    user.ModifiedBy = loggedInUser;
+
+                    _dbContext.Account.Update(user);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<bool> BlockServiceProvider(int userId, int loggedInUser)
+        {
+            try
+            {
+                var user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Id == userId);
+                if (user != null)
+                {
+                    user.IsActive = false;
+                    user.ModifiedDt = DateTime.Now;
+                    user.ModifiedBy = loggedInUser;
+
+                    _dbContext.Account.Update(user);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {

@@ -102,13 +102,23 @@ namespace BlinkAndBuys
 
             app.UseHttpsRedirection();
             app.UseCors("CORS");
-            app.UseStaticFiles();
+
+            //app.UseDefaultFiles();
+            app.UseStaticFiles(); // For the wwwroot folder
             app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),
-                @"Resources")),
+                FileProvider = new PhysicalFileProvider(
+                          Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
             });
+
+
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),
+            //    @"Resources")),
+            //    RequestPath = new PathString("/Resources")
+            //});
 
             app.UseMiddleware<JwtMiddleware>();
             app.UseMvc();

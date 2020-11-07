@@ -13,6 +13,13 @@ namespace Core
         public string ConfirmPassword { get; set; }
         public string CompanyName { get; set; }
         public string ContactNumber { get; set; }
+        public int? ServiceSubCategoryId { get; set; }
+        public int? ServiceId { get; set; }
+        public string Qualification { get; set; }
+        public string Gender { get; set; }
+        public string FatherName { get; set; }
+        public int? CityId { get; set; }
+        public int? StateId { get; set; }
         public string Address { get; set; }
         public string StreetAddress { get; set; }
         public string ZipCode { get; set; }
@@ -31,8 +38,6 @@ namespace Core
         public string Image { get; set; }
         public DateTime? CreatedDt { get; set; }
         public string Token { get; set; }
-        //public Microsoft.AspNetCore.Http.IFormFile ProfileImage { get; set; }
-        //public Microsoft.AspNetCore.Http.IFormFile IdProof { get; set; }
-        //public Microsoft.AspNetCore.Http.IFormFile CancelledCheque { get; set; }
+        
     }
 }

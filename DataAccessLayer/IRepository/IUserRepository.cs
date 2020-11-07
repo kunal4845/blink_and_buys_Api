@@ -14,5 +14,6 @@ namespace DataAccessLayer.IRepository
         Task<Account> GetUserById(int id);
         Task<List<Account>> GetUsers();
         Task<bool> UpdatePassword(int userId, string password, string confirmPassword);
+        Task<bool> UpdateProfileImage(int userId, string profileImage);
     }
 }

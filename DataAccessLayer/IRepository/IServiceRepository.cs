@@ -11,6 +11,7 @@ namespace DataAccessLayer.IRepository
         Task<int> Upsert(Service service, int loggedInUser);
         Task<List<BookedService>> GetBookedServices(int? bookedServiceId);
         Task<int> RejectService(int bookedServiceId, int loggedInUser);
-       
+        Task<int> RejectedByServiceProvider(int bookedServiceId, int loggedInUser);
+        Task<int> ApprovedByServiceProvider(int bookedServiceId, int loggedInUser);
     }
 }

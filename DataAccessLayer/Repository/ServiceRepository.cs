@@ -131,7 +131,7 @@ namespace DataAccessLayer.Repository
                 throw ex;
             }
         }
-        
+
         public async Task<int> RejectService(int bookedServiceId, int loggedInUser)
         {
             try
@@ -142,7 +142,58 @@ namespace DataAccessLayer.Repository
                     _logger.LogInformation("updating BookedService record to database.");
                     bookedService.ModifiedBy = loggedInUser;
                     bookedService.ModifiedDt = DateTime.Now;
-                    bookedService.IsRejected = true;
+                    bookedService.IsRejectedByAdmin = true;
+                    bookedService.IsApprovedByAdmin = false;
+                    _dbContext.BookedService.Update(bookedService);
+                }
+
+                await _dbContext.SaveChangesAsync();
+                return bookedServiceId;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<int> RejectedByServiceProvider(int bookedServiceId, int loggedInUser)
+        {
+            try
+            {
+                var bookedService = await _dbContext.BookedService.FirstOrDefaultAsync(x => x.BookedServiceId == bookedServiceId);
+                if (bookedService != null)
+                {
+                    _logger.LogInformation("reject BookedService by service provider to database.");
+                    bookedService.ModifiedBy = loggedInUser;
+                    bookedService.ModifiedDt = DateTime.Now;
+                    bookedService.IsRejectedByServiceProvider = true;
+                    bookedService.IsApprovedByServiceProvider = false;
+                    _dbContext.BookedService.Update(bookedService);
+                }
+
+                await _dbContext.SaveChangesAsync();
+                return bookedServiceId;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<int> ApprovedByServiceProvider(int bookedServiceId, int loggedInUser)
+        {
+            try
+            {
+                var bookedService = await _dbContext.BookedService.FirstOrDefaultAsync(x => x.BookedServiceId == bookedServiceId);
+                if (bookedService != null)
+                {
+                    _logger.LogInformation("reject BookedService by service provider to database.");
+                    bookedService.ModifiedBy = loggedInUser;
+                    bookedService.ModifiedDt = DateTime.Now;
+                    bookedService.IsApprovedByServiceProvider = true;
+                    bookedService.IsRejectedByServiceProvider = false;
                     _dbContext.BookedService.Update(bookedService);
                 }
 

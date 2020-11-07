@@ -52,3 +52,6 @@ D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.csproj.C
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.dll
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.pdb
 D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\BlinkAndBuys.genruntimeconfig.cache
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.blinkandbuysapi - Web Deploy.json
+D:\blink_and_buys_Api\BlinkAndBuys\bin\Debug\netcoreapp2.1\Properties\ServiceDependencies\blinkandbuysapi - Web Deploy\profile.arm.json
+D:\blink_and_buys_Api\BlinkAndBuys\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
