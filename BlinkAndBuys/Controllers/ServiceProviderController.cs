@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlinkAndBuys.Helpers;
 using Core;
-using Core.Helper;
 using DataAccessLayer.IRepository;
 using Database.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BlinkAndBuys.Controllers

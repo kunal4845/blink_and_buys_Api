@@ -113,12 +113,6 @@ namespace BlinkAndBuys
             });
 
 
-            //app.UseStaticFiles(new StaticFileOptions()
-            //{
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),
-            //    @"Resources")),
-            //    RequestPath = new PathString("/Resources")
-            //});
 
             app.UseMiddleware<JwtMiddleware>();
             app.UseMvc();
