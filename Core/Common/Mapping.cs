@@ -17,6 +17,10 @@ namespace Core.Common
             CreateMap<Category, CategoryModel>().ReverseMap();
             CreateMap<BookedService, BookedServiceModel>().ReverseMap();
             CreateMap<ServiceProviderAvailability, ServiceProviderAvailabilityModel>().ReverseMap();
+            CreateMap<SubCategory, SubCategoryModel>().ReverseMap();
+            CreateMap<UserCart, UserCartModel>().ReverseMap();
+            CreateMap<BillingAddress, BillingAddressModel>().ReverseMap();
+            CreateMap<Payment, PaymentModel>().ReverseMap();
         }
     }
 }

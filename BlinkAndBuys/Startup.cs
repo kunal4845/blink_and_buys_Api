@@ -15,7 +15,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
-using Serilog;
 using Microsoft.Extensions.Logging;
 
 namespace BlinkAndBuys
@@ -45,7 +44,7 @@ namespace BlinkAndBuys
             services.AddSingleton(mapper);
 
             //Fetching Connection string from APPSETTINGS.JSON  
-            var ConnectionString = Configuration.GetConnectionString("GStore");
+            var ConnectionString = Configuration.GetConnectionString("BlinkandBuys");
 
             //Entity Framework  
             services.AddDbContext<BlinkandBuysContext>(options => options.UseSqlServer(ConnectionString));
@@ -75,7 +74,6 @@ namespace BlinkAndBuys
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // Repositories and services injection
-
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IDealerRepository, DealerRepository>();
@@ -83,6 +81,8 @@ namespace BlinkAndBuys
             services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IServiceProviderRepository, ServiceProviderRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
+
             services.AddMvc();
         }
 
@@ -97,13 +97,11 @@ namespace BlinkAndBuys
             {
                 app.UseHsts();
             }
-
             loggerFactory.AddFile("Logs/BlinkBuys-{Date}.txt");
 
             app.UseHttpsRedirection();
             app.UseCors("CORS");
 
-            //app.UseDefaultFiles();
             app.UseStaticFiles(); // For the wwwroot folder
             app.UseStaticFiles(new StaticFileOptions()
             {
@@ -111,10 +109,8 @@ namespace BlinkAndBuys
                           Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
             });
-
-
-
             app.UseMiddleware<JwtMiddleware>();
+
             app.UseMvc();
         }
     }

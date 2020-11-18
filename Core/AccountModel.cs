@@ -13,7 +13,7 @@ namespace Core
         public string ConfirmPassword { get; set; }
         public string CompanyName { get; set; }
         public string ContactNumber { get; set; }
-        public int? ServiceSubCategoryId { get; set; }
+        public string ServiceSubCategoryId { get; set; }
         public int? ServiceId { get; set; }
         public string Qualification { get; set; }
         public string Gender { get; set; }

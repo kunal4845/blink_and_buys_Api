@@ -16,6 +16,7 @@ namespace Database.Models
         public string Size { get; set; }
         public int? Quantity { get; set; }
         public string Note { get; set; }
+        public int? CommissionPercentage { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }
         public bool IsVerified { get; set; }

@@ -1,7 +1,5 @@
 ﻿using Database.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.IRepository
@@ -11,5 +9,9 @@ namespace DataAccessLayer.IRepository
         Task<List<Category>> Get(int? categoryId);
         Task<bool> Delete(int categoryId, int loggedInUser);
         Task<int> Upsert(Category category, int loggedInUser);
+        Task<List<SubCategory>> GetSubCategory(int? subCategoryId);
+        Task<bool> DeleteSubCategory(int subCategoryId, int loggedInUser);
+        Task<int> UpsertSubCategory(SubCategory subCategory, int loggedInUser);
+        Task<List<SubCategory>> GetSubCategoryByService(int serviceId);
     }
 }

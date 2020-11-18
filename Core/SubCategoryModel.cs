@@ -3,11 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core
 {
-    public class CategoryModel
+    public class SubCategoryModel
     {
         [Key]
         public int Id { get; set; }
-        public string CategoryName { get; set; }
+        public int ServiceId { get; set; }
+        public string SubCategoryName { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }

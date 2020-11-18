@@ -72,12 +72,20 @@ namespace DataAccessLayer.Repository
             try
             {
                 Account user = null;
-                user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower() && x.RoleId == account.RoleId);
-                if (user != null)
+                if (account.RoleId == (int)ERole.Admin || account.RoleId == (int)ERole.Customer)
                 {
                     user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
-                                        && x.Password == account.Password && x.RoleId == account.RoleId);
-                    return user;
+                        && x.RoleId == account.RoleId && x.IsActive && !x.IsDeleted);
+                }
+                else if (account.RoleId == (int)ERole.ServiceProvider)
+                {
+                    user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
+                        && x.RoleId == account.RoleId && x.IsActive && !x.IsDeleted && x.IsAccountVerified.Value);
+                }
+                else if (account.RoleId == (int)ERole.Dealer)
+                {
+                    user = await _dbContext.Account.FirstOrDefaultAsync(x => x.Email.ToLower() == account.Email.ToLower()
+                        && x.RoleId == account.RoleId && x.IsActive && !x.IsDeleted && x.IsAccountVerified.Value && x.IsNumberVerified.Value);
                 }
                 return user;
             }

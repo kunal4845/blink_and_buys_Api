@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Logs\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Resources\ServiceIcons\" />
     <Folder Include="Resources\ProductImages\" />

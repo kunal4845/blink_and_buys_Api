@@ -1,5 +1,4 @@
-﻿using Database.Models;
-using System;
+﻿using System;
 
 namespace Core
 {
@@ -8,6 +7,7 @@ namespace Core
         public int Id { get; set; }
         public int UserId { get; set; }
         public int ProductId { get; set; }
+        public string Type { get; set; }
         public int Quantity { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedDt { get; set; }

@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 
-
 namespace DataAccessLayer.Repository
 {
     public class CategoryRepository : ICategoryRepository
@@ -99,6 +98,104 @@ namespace DataAccessLayer.Repository
                 }
                 await _dbContext.SaveChangesAsync();
                 return category.Id;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<List<SubCategory>> GetSubCategory(int? subCategoryId)
+        {
+            try
+            {
+                _logger.LogError("Getting subCategory list.");
+                List<SubCategory> categories = new List<SubCategory>();
+                if (subCategoryId != null)
+                {
+                    var categoryList = await _dbContext.SubCategory.ToListAsync();
+                    categories = categoryList.Where(x => x.Id == subCategoryId).ToList();
+                }
+                else
+                {
+                    categories = await _dbContext.SubCategory.ToListAsync();
+                }
+
+                return categories;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<List<SubCategory>> GetSubCategoryByService(int serviceId)
+        {
+            try
+            {
+                var subCategories = await _dbContext.SubCategory.Where(x => x.ServiceId == serviceId).ToListAsync();
+                return subCategories;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<bool> DeleteSubCategory(int subCategoryId, int loggedInUser)
+        {
+            try
+            {
+                var subCategory = await _dbContext.SubCategory.FirstOrDefaultAsync(x => x.Id == subCategoryId);
+                if (subCategory != null)
+                {
+                    subCategory.IsDeleted = true;
+                    subCategory.ModifiedDt = DateTime.Now;
+                    subCategory.ModifiedBy = loggedInUser;
+
+                    _dbContext.SubCategory.Update(subCategory);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<int> UpsertSubCategory(SubCategory subCategory, int loggedInUser)
+        {
+            try
+            {
+                var obj = await _dbContext.SubCategory.FirstOrDefaultAsync(x => x.Id == subCategory.Id);
+                if (obj != null)
+                {
+                    _logger.LogInformation("updating category record to database.");
+
+                    obj.ModifiedBy = loggedInUser;
+                    obj.ModifiedDt = DateTime.Now;
+                    obj.SubCategoryName = subCategory.SubCategoryName;
+                    obj.Description = subCategory.Description;
+                    obj.ServiceId = subCategory.ServiceId;
+                    _dbContext.SubCategory.Update(obj);
+                }
+                else
+                {
+                    _logger.LogInformation("inserting category record to database.");
+                    subCategory.IsActive = true;
+                    subCategory.IsDeleted = false;
+                    subCategory.CreatedBy = loggedInUser;
+                    subCategory.CreatedDt = DateTime.Now;
+                    await _dbContext.SubCategory.AddAsync(subCategory);
+                }
+                await _dbContext.SaveChangesAsync();
+                return subCategory.Id;
             }
             catch (Exception ex)
             {
