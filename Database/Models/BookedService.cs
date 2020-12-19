@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Database.Models
 {
@@ -11,8 +9,13 @@ namespace Database.Models
         public int BookedServiceId { get; set; }
         public int? ServiceProviderId { get; set; }
         public int ServiceId { get; set; }
+        public int PaymentId { get; set; }
+        public int BillingAddressId { get; set; }
+        public string DeliveryStatus { get; set; }
+        public string PaymentMode { get; set; }
+        public string Type { get; set; }
+        public int Quantity { get; set; }
         public int UserId { get; set; }
-        public int CityId { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsRejectedByAdmin { get; set; }

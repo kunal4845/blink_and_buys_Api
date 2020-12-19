@@ -4,7 +4,6 @@ using System;
 using System.Threading.Tasks;
 using Grocery.Data;
 using Database.Models;
-using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 
@@ -160,6 +159,38 @@ namespace DataAccessLayer.Repository
                     return true;
                 }
                 return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                throw ex;
+            }
+        }
+
+        public async Task<int> UpdateStatus(BookedService bookedService, string selectedPaymentStatus, int paymentId, int loggedInUser)
+        {
+            try
+            {
+                var payment = await _dbContext.Payment.FirstOrDefaultAsync(x => x.Id == paymentId);
+                if (payment != null)
+                {
+                    payment.PaymentStatus = selectedPaymentStatus;
+                    payment.ModifiedBy = loggedInUser;
+                    payment.ModifiedDt = DateTime.Now;
+                    _dbContext.Payment.Update(payment);
+                    await _dbContext.SaveChangesAsync();
+                }
+
+                var service = await _dbContext.BookedService.Where(x => x.BookedServiceId == bookedService.BookedServiceId).FirstOrDefaultAsync();
+                if (service != null)
+                {
+                    service.DeliveryStatus = bookedService.DeliveryStatus;
+                    service.ModifiedBy = loggedInUser;
+                    service.ModifiedDt = DateTime.Now;
+                    _dbContext.Payment.Update(payment);
+                    await _dbContext.SaveChangesAsync();
+                }
+                return bookedService.BookedServiceId;
             }
             catch (Exception ex)
             {

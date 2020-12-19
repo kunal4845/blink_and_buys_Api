@@ -132,5 +132,24 @@ namespace BlinkAndBuys.Controllers
             }
 
         }
+
+
+        [HttpPost]
+        [Route("updateStatus/{selectedPaymentStatus}/{paymentId}")]
+        public async Task<IActionResult> UpdateStatus([FromBody] BookedServiceModel bookedService, string selectedPaymentStatus, int paymentId)
+        {
+            try
+            {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var service = await _serviceRepository.UpdateStatus(_mapper.Map<BookedServiceModel, BookedService>(bookedService)
+                    , selectedPaymentStatus, paymentId, Convert.ToInt32(loggedInUser));
+                return Ok(service);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
     }
 }

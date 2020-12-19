@@ -16,6 +16,7 @@ namespace Core
         public string Description { get; set; }
         public decimal? Price { get; set; }
         public string Specification { get; set; }
+        public string MasterImage { get; set; }
         public string Size { get; set; }
         public int Quantity { get; set; }
         public string Note { get; set; }

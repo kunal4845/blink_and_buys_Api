@@ -21,6 +21,8 @@ namespace Core.Common
             CreateMap<UserCart, UserCartModel>().ReverseMap();
             CreateMap<BillingAddress, BillingAddressModel>().ReverseMap();
             CreateMap<Payment, PaymentModel>().ReverseMap();
+            CreateMap<ContactUs, ContactUsModel>().ReverseMap();
+            CreateMap<BookedProduct, BookedProductModel>().ReverseMap();
         }
     }
 }

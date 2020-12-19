@@ -7,5 +7,6 @@ namespace DataAccessLayer.IRepository
     public interface IPaymentRepository
     {
         Task<int> PostAsync(Payment payment, int loggedInUser);
+        Task<Payment> Get(int paymentId);
     }
 }

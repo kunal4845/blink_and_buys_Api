@@ -82,6 +82,8 @@ namespace BlinkAndBuys
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IServiceProviderRepository, ServiceProviderRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IContactUsRepository, ContactUsRepository>();
+            services.AddScoped<IBookedProductRepository, BookedProductRepository>();
 
             services.AddMvc();
         }

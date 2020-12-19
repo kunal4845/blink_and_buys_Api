@@ -23,5 +23,9 @@ namespace Core
         public int CreatedBy { get; set; }
         public DateTime? ModifiedDt { get; set; }
         public int? ModifiedBy { get; set; }
+        public ProductModel Product { get; set; }
+        public PaymentModel Payment { get; set; }
+        public BillingAddressModel BillingAddress { get; set; }
+        public AccountModel User { get; set; }
     }
 }

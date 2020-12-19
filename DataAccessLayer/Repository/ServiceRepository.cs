@@ -7,7 +7,6 @@ using Database.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace DataAccessLayer.Repository
 {
@@ -83,7 +82,9 @@ namespace DataAccessLayer.Repository
 
                     obj.ModifiedBy = loggedInUser;
                     obj.ModifiedDt = DateTime.Now;
-                    obj.ServiceIcon = Regex.Replace(service.ServiceIcon, @"^data:image\/[a-zA-Z]+;base64,", string.Empty);
+                    obj.ServiceIcon = service.ServiceIcon;
+                    obj.Price = service.Price;
+                    //Regex.Replace(service.ServiceIcon, @"^data:image\/[a-zA-Z]+;base64,", string.Empty);
                     obj.ServiceName = service.ServiceName;
                     obj.Description = service.Description;
                     _dbContext.Service.Update(obj);

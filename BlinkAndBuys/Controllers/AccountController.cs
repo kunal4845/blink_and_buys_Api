@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
@@ -16,7 +15,6 @@ using Database.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -89,12 +87,12 @@ namespace GroceryStore.Controllers
                         if (files.Where(x => x.Name == "IdProofPath") != null)
                         {
                             byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "IdProofPath").FirstOrDefault().FileName);
-                            account.IdProofPath = Convert.ToBase64String(idProofImageArray);
+                            account.IdProofPath = "data:image/jpg;base64," + Convert.ToBase64String(idProofImageArray);
                         }
                         if (files.Where(x => x.Name == "Image") != null)
                         {
                             byte[] profileImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "CancelledCheque").FirstOrDefault().FileName);
-                            account.CancelledChequePath = Convert.ToBase64String(profileImageArray);
+                            account.CancelledChequePath = "data:image/jpg;base64," + Convert.ToBase64String(profileImageArray);
                         }
                     }
 
@@ -176,12 +174,12 @@ namespace GroceryStore.Controllers
                         if (files.Where(x => x.Name == "IdProofPath") != null)
                         {
                             byte[] idProofImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "IdProofPath").FirstOrDefault().FileName);
-                            account.IdProofPath = Convert.ToBase64String(idProofImageArray);
+                            account.IdProofPath = "data:image/jpg;base64," + Convert.ToBase64String(idProofImageArray);
                         }
                         if (files.Where(x => x.Name == "Image") != null)
                         {
                             byte[] profileImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "Image").FirstOrDefault().FileName);
-                            account.Image = Convert.ToBase64String(profileImageArray);
+                            account.Image = "data:image/jpg;base64," + Convert.ToBase64String(profileImageArray);
                         }
                     }
 

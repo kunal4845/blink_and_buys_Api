@@ -112,7 +112,7 @@ namespace BlinkAndBuys.Controllers
                     if (files.Where(x => x.Name == "Image") != null)
                     {
                         byte[] profileImageArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + files.Where(x => x.Name == "image").FirstOrDefault().FileName);
-                        profileImage = Convert.ToBase64String(profileImageArray);
+                        profileImage = "data:image/jpg;base64," + Convert.ToBase64String(profileImageArray);
                     }
                 }
 

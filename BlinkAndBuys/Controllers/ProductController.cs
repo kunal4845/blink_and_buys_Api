@@ -53,7 +53,7 @@ namespace BlinkAndBuys.Controllers
                         productImage = new ProductImageModel()
                         {
                             Name = item.Name,
-                            ImagePath = Regex.Replace(item.ImagePath, @"^data:image\/[a-zA-Z]+;base64,", string.Empty),
+                            ImagePath = item.ImagePath,
                             IsPrimaryImage = item.IsPrimaryImage,
                             ProductId = productModel.Id,
                             IsDeleted = false,
@@ -109,7 +109,7 @@ namespace BlinkAndBuys.Controllers
                     productImage = new ProductImageModel()
                     {
                         Name = fileName,
-                        ImagePath = Convert.ToBase64String(image),
+                        ImagePath = "data:image/jpg;base64," + Convert.ToBase64String(image),
                         IsPrimaryImage = fileName == masterImage ? true : false,
                         ProductId = productId,
                         IsDeleted = false,
@@ -144,10 +144,34 @@ namespace BlinkAndBuys.Controllers
 
                 foreach (var product in response)
                 {
-                    _logger.LogInformation("Fetching product images for product id: {0}", product.Id);
-                    var images = _productRepository.GetProductImages(product.Id);
-                    var productImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
-                    product.ProductImages = productImages;
+                    var images = await _productRepository.GetProductImages(product.Id);
+                    product.ProductImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
+                }
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("dashboard/list/{id?}")]
+        public async Task<IActionResult> GetDashboardProducts(int? id)
+        {
+            try
+            {
+                var products = await _productRepository.GetProductsAsync(id);
+                var filterProducts = products.FindAll(x => !x.IsDeleted && x.IsActive && x.IsVerified);
+
+                var response = _mapper.Map<List<Product>, List<ProductModel>>(filterProducts);
+
+                foreach (var product in response)
+                {
+                    var images = await _productRepository.GetProductImages(product.Id);
+                    product.MasterImage = images.Find(x => x.IsPrimaryImage && !x.IsDeleted).ImagePath;
                 }
 
                 return Ok(response);
@@ -245,18 +269,33 @@ namespace BlinkAndBuys.Controllers
         {
             try
             {
+                //var products = await _productRepository.GetRecommendedProducts();
+                //var response = _mapper.Map<List<Product>, List<ProductModel>>(products);
+
+                //foreach (var product in response)
+                //{
+                //    _logger.LogInformation("Fetching product images for product id: {0}", product.Id);
+                //    var images = await _productRepository.GetProductImages(product.Id);
+                //    var productImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
+                //    product.ProductImages = productImages;
+                //}
+
+                //return Ok(response);
+
+
                 var products = await _productRepository.GetRecommendedProducts();
-                var response = _mapper.Map<List<Product>, List<ProductModel>>(products);
+                var filterProducts = products.FindAll(x => !x.IsDeleted && x.IsActive && x.IsVerified);
+
+                var response = _mapper.Map<List<Product>, List<ProductModel>>(filterProducts);
 
                 foreach (var product in response)
                 {
-                    _logger.LogInformation("Fetching product images for product id: {0}", product.Id);
-                    var images = _productRepository.GetProductImages(product.Id);
-                    var productImages = _mapper.Map<List<ProductImage>, List<ProductImageModel>>(images);
-                    product.ProductImages = productImages;
+                    var images = await _productRepository.GetProductImages(product.Id);
+                    product.MasterImage = images.Find(x => x.IsPrimaryImage && !x.IsDeleted).ImagePath;
                 }
 
                 return Ok(response);
+
             }
             catch (Exception ex)
             {

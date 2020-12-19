@@ -12,5 +12,6 @@ namespace DataAccessLayer.IRepository
         Task<bool> BlockServiceProvider(int userId, int loggedInUser);
         Task<bool> DeleteServiceProvider(int userId, int loggedInUser);
         Task<bool> VerifyServiceProvider(int userId, int loggedInUser);
+        Task<int> UpdateStatus(BookedService bookedService, string selectedPaymentStatus, int paymentId, int loggedInUser);
     }
 }

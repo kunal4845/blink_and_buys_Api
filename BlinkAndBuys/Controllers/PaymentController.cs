@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
 using DataAccessLayer.IRepository;
 using Database.Models;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Text.RegularExpressions;
 
 namespace BlinkAndBuys.Controllers
 {
@@ -37,7 +32,24 @@ namespace BlinkAndBuys.Controllers
             try
             {
                 var loggedInUser = Request.HttpContext.Items["userId"];
+                payment.UserId = Convert.ToInt32(loggedInUser);
                 var response = await _paymentRepository.PostAsync(_mapper.Map<PaymentModel, Payment>(payment), Convert.ToInt32(loggedInUser));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Following exception has occurred: {0}", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("{paymentId}")]
+        public async Task<IActionResult> Get(int paymentId)
+        {
+            try
+            {
+                var response = await _paymentRepository.Get(paymentId);
                 return Ok(response);
             }
             catch (Exception ex)

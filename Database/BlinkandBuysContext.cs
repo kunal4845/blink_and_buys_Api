@@ -20,6 +20,7 @@ namespace Grocery.Data
         public DbSet<BillingAddress> BillingAddress { get; set; }
         public DbSet<Payment> Payment { get; set; }
         public DbSet<BookedProduct> BookedProduct { get; set; }
+        public DbSet<ContactUs> ContactUs { get; set; }
 
         public BlinkandBuysContext(DbContextOptions<BlinkandBuysContext> options) : base(options)
         {

@@ -92,7 +92,10 @@ namespace DataAccessLayer.Repository
                 if (id != null)
                 {
                     var product = await _dbContext.Product.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
-                    products.Add(product);
+                    if (product != null)
+                    {
+                        products.Add(product);
+                    }
                 }
                 else
                 {
@@ -156,21 +159,18 @@ namespace DataAccessLayer.Repository
             }
         }
 
-        public List<ProductImage> GetProductImages(int? productId)
+        public async Task<List<ProductImage>> GetProductImages(int? productId)
         {
             try
             {
-                _logger.LogError("Getting product images from db.");
-
                 List<ProductImage> productImages = new List<ProductImage>();
                 if (productId != null)
                 {
-                    var images = _dbContext.ProductImage.ToList();
-                    productImages = images.Where(x => x.ProductId == productId && !x.IsDeleted).ToList();
+                    productImages = await _dbContext.ProductImage.Where(x => x.ProductId == productId && !x.IsDeleted).ToListAsync();
                 }
                 else
                 {
-                    productImages = _dbContext.ProductImage.Where(x => !x.IsDeleted).ToList();
+                    productImages = await _dbContext.ProductImage.Where(x => !x.IsDeleted).ToListAsync();
                 }
 
                 return productImages;
@@ -191,7 +191,7 @@ namespace DataAccessLayer.Repository
                 products = await _dbContext.Product.Where(x => !x.IsDeleted).ToListAsync();
 
                 Random rand = new Random();
-                int toSkip = rand.Next(1, products.Count);
+                int toSkip = rand.Next(0, products.Count);
                 return products.OrderBy(r => Guid.NewGuid()).Skip(toSkip).Take(10).ToList();
             }
             catch (Exception ex)
@@ -205,15 +205,24 @@ namespace DataAccessLayer.Repository
         {
             try
             {
-                _logger.LogError("adding cart to database.");
-                var carts = await _dbContext.UserCart.ToListAsync();
-                var cart = carts.Where(x => x.ProductId == userCart.ProductId && x.UserId == userCart.UserId && x.IsDeleted == false).FirstOrDefault();
+                if (userCart.Type == "service")
+                {
+                    userCart.IsDeleted = false;
+                    userCart.CreatedDt = DateTime.Now;
+                    userCart.CreatedBy = userCart.UserId;
+                    await _dbContext.UserCart.AddAsync(userCart);
+                    await _dbContext.SaveChangesAsync();
+                    return userCart;
+                }
+
+                var cart = await _dbContext.UserCart.Where(x => x.BookedItemId == userCart.BookedItemId && x.UserId == userCart.UserId && !x.IsDeleted
+                    && x.Type == userCart.Type).FirstOrDefaultAsync();
                 if (cart != null)
                 {
                     cart.IsDeleted = false;
                     cart.ModifiedDt = DateTime.Now;
                     cart.ModifiedBy = userCart.UserId;
-                    cart.Quantity = userCart.Quantity;
+                    cart.Quantity = userCart.Id > 0 ? userCart.Quantity : (userCart.Quantity + cart.Quantity);
                     _dbContext.UserCart.Update(cart);
                 }
                 else

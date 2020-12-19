@@ -8,7 +8,7 @@ namespace Database.Models
         [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int ProductId { get; set; }
+        public int BookedItemId { get; set; }
         public int Quantity { get; set; }
         public string Type { get; set; }
         public bool IsDeleted { get; set; }

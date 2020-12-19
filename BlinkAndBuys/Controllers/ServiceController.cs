@@ -99,7 +99,7 @@ namespace BlinkAndBuys.Controllers
 
                         _logger.LogInformation("Convert images to base64.");
                         byte[] iconArray = System.IO.File.ReadAllBytes(pathToSave + "\\" + fileName);
-                        service.ServiceIcon = Convert.ToBase64String(iconArray);
+                        service.ServiceIcon = "data:image/jpg;base64," + Convert.ToBase64String(iconArray);
                     }
 
                     _logger.LogInformation("Inserting record to database.");

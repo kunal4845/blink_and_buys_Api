@@ -21,13 +21,15 @@ namespace BlinkAndBuys.Controllers
     {
         #region Initiate
         private IProductRepository _productRepository;
+        private IServiceRepository _serviceRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<ProductController> _logger;
-        public CartController(ILogger<ProductController> logger, IProductRepository productRepository, IMapper mapper)
+        public CartController(ILogger<ProductController> logger, IProductRepository productRepository, IMapper mapper, IServiceRepository serviceRepository)
         {
             _logger = logger;
             _productRepository = productRepository;
             _mapper = mapper;
+            _serviceRepository = serviceRepository;
         }
         #endregion
 
@@ -37,6 +39,9 @@ namespace BlinkAndBuys.Controllers
         {
             try
             {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                userCart.UserId = Convert.ToInt32(loggedInUser);
+
                 var response = await _productRepository.AddToCart(_mapper.Map<UserCartModel, UserCart>(userCart));
                 return Ok(response);
             }
@@ -48,33 +53,56 @@ namespace BlinkAndBuys.Controllers
         }
 
         [HttpGet]
-        [Route("{userId}")]
-        public async Task<IActionResult> GetCart(int userId)
+        [Route("")]
+        public async Task<IActionResult> GetCart()
         {
             try
             {
-                List<UserCartModel> userCarts = new List<UserCartModel>();
+                var loggedInUser = Request.HttpContext.Items["userId"];
 
-                var response = await _productRepository.GetCart(userId);
+                List<UserCartModel> userCarts = new List<UserCartModel>();
+                UserCartModel userCart = new UserCartModel();
+
+                var response = await _productRepository.GetCart(Convert.ToInt32(loggedInUser));
                 foreach (var item in response)
                 {
-                    var products = await _productRepository.GetProductsAsync(item.ProductId);
-                    var productModels = _mapper.Map<List<Product>, List<ProductModel>>(products);
-
-                    if (productModels.Count > 0)
+                    if (item.Type == "service")
                     {
-                        UserCartModel userCart = new UserCartModel()
+                        var services = await _serviceRepository.GetServices(item.BookedItemId);
+                        var serviceModels = _mapper.Map<List<Service>, List<ServiceModel>>(services);
+                        userCart = new UserCartModel()
                         {
-                            Product = productModels[0],
+                            Service = serviceModels[0],
                             Id = item.Id,
                             IsDeleted = item.IsDeleted,
-                            ProductId = item.ProductId,
+                            BookedItemId = item.BookedItemId,
                             Quantity = item.Quantity,
                             UserId = item.UserId,
                             CreatedDt = item.CreatedDt,
                             Type = item.Type
                         };
                         userCarts.Add(userCart);
+                    }
+                    else if (item.Type == "product")
+                    {
+                        var products = await _productRepository.GetProductsAsync(item.BookedItemId);
+                        var productModels = _mapper.Map<List<Product>, List<ProductModel>>(products);
+
+                        if (productModels.Count > 0)
+                        {
+                            userCart = new UserCartModel()
+                            {
+                                Product = productModels[0],
+                                Id = item.Id,
+                                IsDeleted = item.IsDeleted,
+                                BookedItemId = item.BookedItemId,
+                                Quantity = item.Quantity,
+                                UserId = item.UserId,
+                                CreatedDt = item.CreatedDt,
+                                Type = item.Type
+                            };
+                            userCarts.Add(userCart);
+                        }
                     }
                 }
                 return Ok(userCarts);
@@ -108,6 +136,8 @@ namespace BlinkAndBuys.Controllers
         {
             try
             {
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                //userCart.UserId = Convert.ToInt32(loggedInUser);
                 var response = await _productRepository.Checkout(_mapper.Map<List<UserCartModel>, List<UserCart>>(userCart));
                 return Ok(response);
             }
@@ -126,7 +156,6 @@ namespace BlinkAndBuys.Controllers
             try
             {
                 var loggedInUser = Request.HttpContext.Items["userId"];
-
                 var response = await _productRepository.BillingAddress(_mapper.Map<BillingAddressModel, BillingAddress>(billingAddress), Convert.ToInt32(loggedInUser));
                 return Ok(response);
             }
@@ -139,12 +168,13 @@ namespace BlinkAndBuys.Controllers
 
 
         [HttpGet]
-        [Route("billingAddress/{userId}")]
-        public async Task<IActionResult> GetBillingAddress(int userId)
+        [Route("billingAddress")]
+        public async Task<IActionResult> GetBillingAddress()
         {
             try
             {
-                var response = await _productRepository.GetBillingAddress(userId);
+                var loggedInUser = Request.HttpContext.Items["userId"];
+                var response = await _productRepository.GetBillingAddress(Convert.ToInt32(loggedInUser));
                 return Ok(response);
             }
             catch (Exception ex)
